@@ -778,7 +778,7 @@ function createRing(p) {
     return ring;
 }
 
-function center(object) {
+function centerIt(object) {
     bounds = object.getBounds();
     var x = bounds[0]._x + ((bounds[1]._x - bounds[0]._x)/2);
     var y = bounds[0]._y + ((bounds[1]._y - bounds[0]._y)/2);
@@ -801,7 +801,7 @@ function main(p) {
     let badge = base.union(logo);
     badge = badge.scale([0.25, 0.25, 1]);
     badge = badge.rotateZ(90);
-    badge = center(badge);
+    badge = centerIt(badge);
 
     let ring = createRing(p);
 

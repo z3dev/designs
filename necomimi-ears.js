@@ -134,7 +134,7 @@ function createFrame(p) {
     var ear = pandaEar().scale([p.scale,p.scale]);
     //var frame = ear.rectangularExtrude(4,1,32).center(); // w, h, r
     //frame = frame.union(ear.rectangularExtrude(2,2,32).center());
-    var frame = ear.innerToCAG().center().extrude({offset: [0,0,p.wall]});
+    var frame = ear.innerToCAG().center([true, true, true]).extrude({offset: [0,0,p.wall]});
     frame = frame.rotateZ(-45);
 // rotate to Z space and orientate to Z=0
     frame = frame.rotateX(90);
@@ -256,7 +256,6 @@ function main(p) {
     var base = createBase(p);
     var core = createCore(p);
     var frame = createFrame(p);
-    //return frame;
     
     var all = new CSG();
     all = all.union(base);

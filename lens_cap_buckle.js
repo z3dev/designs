@@ -81,6 +81,22 @@ function buckle( p )
   return b3.extrude( {offset: [0,0,p.mount_base]} );
 }
 
+function getParameterDefinitions() { 
+  return [ 
+    { name: 'lens', type: 'group', caption: 'Lens' },
+    { name: 'lens_diameter', type: 'int', initial: 77, caption: 'Diameter (mm)?' }, 
+    { name: 'strap', type: 'group', caption: 'Strap' },
+    { name: 'strap_width', type: 'int', initial: 40, caption: 'Width (mm)?' }, 
+    { name: 'buckle', type: 'group', caption: 'Buckle' },
+    { name: 'buckle_gap', type: 'int', initial: 6, caption: 'Gap for strap (mm)?' }, 
+    { name: 'buckle_split', type: 'int', initial: 0, caption: 'Split for strap (mm or 0)?' }, 
+    { name: 'buckle_fill', type: 'choice', initial: 'hollow', caption: 'Base?', values: ['hollow','solid'], captions: ['Hollow','Solid'] }, 
+    { name: 'others', type: 'group', caption: 'Others' },
+    { name: 'resolution', type: 'int', initial: 36, caption: 'Resolution:' }, 
+    { name: 'color', type: 'choice', initial: '035/141/053/255', caption: 'Color?', values: ['016/169/240/255','019/040/177/255','165/190/215/255','242/243/242/255','190/170/235/255','243/110/202/255','252/088/166/255','248/060/033/255','253/102/054/255','255/180/050/255','240/202/029/255','252/230/037/255','190/212/003/255','166/246/029/255','035/141/053/255','032/163/145/255','245/030/015/230','255/160/000/220','250/210/000/220','060/145/040/230','195/000/070/230','236/228/212/255','215/200/164/255','183/180/140/255','132/134/096/255','042/041/038/255','255/255/255/250','184/185/189/255','080/049/039/255','190/133/085/255'], captions: ['Sky Blue','Ultra Marine Blue','Blue Grey','Bluish White','Lila','Magenta','Flourescent Pink','Traffic Red','Warm Red','Dutch Orange','Olympic Gold','Signal Yellow','Flourescent Green','Intense Green','Leaf Green','Mint Turquoise','Red Transparent','Orange Transparent','Yellow Transparent','Green Transparent','Violet Transparent','Naturel','Pale Gold','Greenish Beige','Olive Green','Standard Black','Standard White','Shining Silver','Chocolate Brown','Light Brown'] }, 
+   ];
+}
+
 function main( parameters ) {
   var tolerance = 0.35;         // XY precision of 3D printer
 

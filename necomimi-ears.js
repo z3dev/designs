@@ -1,6 +1,6 @@
-const { booleans, colors, extrusions, geometries, maths, measurements, primitives, transforms } = require('@jscad/modeling')
+const { booleans, extrusions, geometries, maths, measurements, primitives, transforms } = require('@jscad/modeling')
 
-const { circle, cuboid, cylinder, rectangle, roundedCuboid, roundedRectangle, sphere } = primitives
+const { cylinder, roundedCuboid, roundedRectangle } = primitives
 const { geom2, path2 } = geometries
 const { extrudeFromSlices, extrudeLinear, slice } = extrusions
 const { measureBoundingBox } = measurements
@@ -110,15 +110,14 @@ const extrudeFromPathA = (cag, path) => {
 }
 
 const createNecomimi = (p) => {
-  let x, y, rr
-  x = p.necomimi_b_x / 2
-  y = p.necomimi_b_y / 2
-  rr = p.necomimi_b_rr
+  const x = p.necomimi_b_x / 2
+  const y = p.necomimi_b_y / 2
+  const rr = p.necomimi_b_rr
   const b = roundedRectangle({ center: [0, 0], size: [x * 2, y * 2], roundRadius: rr, segments: 32 })
   const z = makePath(p)
   let bs = extrudeFromPathA(b, z)
   let s = cylinder({ height: 10, center: [0, 0, -5], radius: 4, segments: p.segments })
-  if (p.type == 0) { // right side ear
+  if (p.type === 0) { // right side ear
     s = translate([-p.necomimi_m_o, 0, 0], s)
   } else { // left side ear
     s = translate([p.necomimi_m_o, 0, 0], s)
@@ -188,7 +187,7 @@ const createFrame = (p) => {
   frame = union(frame, r)
 
   frame = translate([p.fitx, p.fity, p.fitz], frame)
-  if (p.type == 0) { // right side ear
+  if (p.type === 0) { // right side ear
   } else {
     frame = mirrorX(frame)
   }
@@ -196,10 +195,9 @@ const createFrame = (p) => {
 }
 
 const createBase = (p) => {
-  let x, y, rr
-  x = p.necomimi_b_x / 2
-  y = p.necomimi_b_y / 2
-  rr = p.necomimi_b_rr
+  let x = p.necomimi_b_x / 2
+  let y = p.necomimi_b_y / 2
+  const rr = p.necomimi_b_rr
   const c = roundedRectangle({ center: [0, 0], size: [x * 2, y * 2], roundRadius: rr, segments: 32 })
   let z = makePath(p)
   const nm = extrudeFromPathA(c, z)
@@ -219,10 +217,9 @@ const createBase = (p) => {
 }
 
 const createCore = (p) => {
-  let x, y, rr
-  x = p.necomimi_b_x / 2
-  y = p.necomimi_b_y / 2
-  rr = p.necomimi_b_rr
+  let x = p.necomimi_b_x / 2
+  let y = p.necomimi_b_y / 2
+  const rr = p.necomimi_b_rr
   const c = roundedRectangle({ center: [0, 0], size: [x * 2, y * 2], roundRadius: rr, segments: 32 })
   let z = makePath(p)
   const nm = extrudeFromPathA(c, z)

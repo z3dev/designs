@@ -1,4 +1,4 @@
-const { booleans, colors, extrusions, geometries, primitives, transforms } = require('@jscad/modeling')
+const { booleans, colors, extrusions, primitives, transforms } = require('@jscad/modeling')
 
 // functions that this design uses
 const { intersect, subtract, union } = booleans

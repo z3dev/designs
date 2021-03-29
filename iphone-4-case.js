@@ -1,4 +1,4 @@
-function getParameterDefinitions () {
+const getParameterDefinitions = () => {
   return [
     { name: 'case', type: 'group', caption: 'Case' },
     { name: 'thickness', type: 'float', initial: 1.0, caption: 'Thickness (mm)?', step: 0.1, min: 1.0, max: 10.0 },
@@ -21,10 +21,10 @@ function getParameterDefinitions () {
   ]
 }
 
-function use (url) {
+const use = (url) => {
   const xmlhttp = new XMLHttpRequest()
   let obj = null
-  xmlhttp.onreadystatechange = function (e) {
+  xmlhttp.onreadystatechange = (e) => {
     if (xmlhttp.readyState == 4) {
       if (xmlhttp.status == 200) {
         obj = JSON.parse(xmlhttp.responseText)
@@ -40,7 +40,7 @@ function use (url) {
   return obj
 }
 
-function iphone4 (p) {
+const iphone4 = (p) => {
   const iphone = {}
   iphone.w = 58.6
   iphone.h = 115.2
@@ -122,7 +122,7 @@ function iphone4 (p) {
   p.iphone4 = iphone
 }
 
-function makeDisplay (p) {
+const makeDisplay = (p) => {
   let x = (p.iphone4.ds_rw) + p.offset
   let y = (p.iphone4.ds_rh) + p.offset
   let z = p.iphone4.d + ((p.offset + p.thickness) * 2)
@@ -135,7 +135,8 @@ function makeDisplay (p) {
   b = b.translate([x, y, z])
   return b
 }
-function makeHomeButton (p) {
+
+const makeHomeButton = (p) => {
   let x, y, z
   let rx, ry, rz, rr
   z = p.iphone4.d
@@ -148,7 +149,8 @@ function makeHomeButton (p) {
   hb = hb.translate([x, y, z])
   return hb
 }
-function makeRingSilent (p) {
+
+const makeRingSilent = (p) => {
   let r = p.iphone4.ss_rh
   let x = p.iphone4.ss_rw
   r = r + 1.50 // extra space for access
@@ -163,7 +165,8 @@ function makeRingSilent (p) {
   b = b.translate([x, y, z])
   return b
 }
-function makeVolumeButtons (p) {
+
+const makeVolumeButtons = (p) => {
   let x, y, z
   let rx, ry, rz, rr
   rr = p.iphone4.vb_rr
@@ -180,7 +183,8 @@ function makeVolumeButtons (p) {
   vb = vb.union(vb1)
   return vb
 }
-function makePower (p) {
+
+const makePower = (p) => {
   let x, y, z
   let rx, ry, rz, rr
   rx = p.iphone4.pb_rw
@@ -197,7 +201,8 @@ function makePower (p) {
   pb = pb.translate([x, y, z])
   return pb
 }
-function makeHeadPhone (p) {
+
+const makeHeadPhone = (p) => {
   let x, y, z
   let rx, ry, rz, rr
   z = p.thickness + p.offset
@@ -211,7 +216,8 @@ function makeHeadPhone (p) {
   ej = ej.translate([x, y, z])
   return ej
 }
-function makeSimSlot (p) {
+
+const makeSimSlot = (p) => {
   let x, y, z
   let rx, ry, rz, rr
   rx = p.iphone4.sm_rw
@@ -228,7 +234,8 @@ function makeSimSlot (p) {
   sm = sm.translate([x, y, z])
   return sm
 }
-function makePowerJack (p) {
+
+const makePowerJack = (p) => {
   let x, y, z
   let rx, ry, rz, rr
   rx = p.iphone4.pj_rw
@@ -245,7 +252,8 @@ function makePowerJack (p) {
   pj = pj.translate([x, y, z])
   return pj
 }
-function makeSpeakers (p) {
+
+const makeSpeakers = (p) => {
   let x, y, z
   let rx, ry, rz, rr
   rx = p.iphone4.sp_rw
@@ -265,7 +273,8 @@ function makeSpeakers (p) {
   sp = sp.union(sp1)
   return sp
 }
-function makeCameraPort (p) {
+
+const makeCameraPort = (p) => {
   let x, y, z
   let rx, ry, rz, rr
 
@@ -291,8 +300,9 @@ function makeCameraPort (p) {
 
   return bc
 }
+
 // works only for flush case
-function makeFitSlots (p) {
+const makeFitSlots = (p) => {
   const x = p.iphone4.rw
   let y = p.iphone4.rr * 0.25
   const rr = y * 0.50
@@ -320,7 +330,7 @@ function makeFitSlots (p) {
   return b
 }
 
-function main (p) {
+const main = (p) => {
   // var p = {};
 
   const s = use('http://www.z3d.jp/lab/data/lab-000000056/iPhone4_72.json')
@@ -409,5 +419,5 @@ function main (p) {
 
   // return iphone;
   return c
-  return [c, iphone]
+  // return [c, iphone]
 }

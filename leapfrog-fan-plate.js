@@ -6,11 +6,9 @@ const { cuboid, cylinder, roundedRectangle } = primitives
 const { rotateX, translate } = transforms
 const { degToRad } = utils
 
-const getParameterDefinitions = () => {
-  return [
-    { name: 'segments', type: 'int', initial: 36, caption: 'Segments?' }
-  ]
-}
+const getParameterDefinitions = () => [
+  { name: 'segments', type: 'int', initial: 36, caption: 'Segments?' }
+]
 
 const main = (p) => {
   p.tolerence = 0.35 / 2

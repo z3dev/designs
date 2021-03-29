@@ -6,11 +6,9 @@ const { colorize } = require('@jscad/modeling').colors
 const { measureBoundingBox } = require('@jscad/modeling').measurements
 const { sphere } = require('@jscad/modeling').primitives
 
-const getParameterDefinitions = () => {
-  return [
-    { name: 'segments', type: 'int', initial: 72, caption: 'Resolution?' }
-  ]
-}
+const getParameterDefinitions = () => [
+  { name: 'segments', type: 'int', initial: 72, caption: 'Resolution?' }
+]
 
 const getZ = (p) => {
   let cag111 = path2.fromPoints({}, [[90.25, -35.25]])

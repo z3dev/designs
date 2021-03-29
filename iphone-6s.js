@@ -24,29 +24,27 @@ const colorParameter = (options) => {
   return { name, type, initial, caption, values, captions }
 }
 
-const getParameterDefinitions = () => {
-  return [
-    { name: 'rendering', type: 'group', caption: 'Render' },
-    { name: 'showscreen', type: 'checkbox', checked: true, caption: 'Touch Screen?' },
-    { name: 'showhome', type: 'checkbox', checked: true, caption: 'Home Buttom?' },
-    { name: 'showfrontcam', type: 'checkbox', checked: true, caption: 'Front Camera?' },
-    { name: 'showfrontsen', type: 'checkbox', checked: true, caption: 'Front Sensor?' },
-    { name: 'showfrontspk', type: 'checkbox', checked: true, caption: 'Front Speaker?' },
-    { name: 'showringsilent', type: 'checkbox', checked: true, caption: 'Ring/Silent Switch?' },
-    { name: 'showvolume', type: 'checkbox', checked: true, caption: 'Volume Switches?' },
-    { name: 'showpower', type: 'checkbox', checked: true, caption: 'Power Switch?' },
-    { name: 'showsim', type: 'checkbox', checked: true, caption: 'Sim Slot?' },
-    { name: 'showheadphone', type: 'checkbox', checked: true, caption: 'Headphone?' },
-    { name: 'showlight', type: 'checkbox', checked: true, caption: 'Power Port?' },
-    { name: 'showmic', type: 'checkbox', checked: true, caption: 'Bottom Microphones?' },
-    { name: 'showspeaker', type: 'checkbox', checked: true, caption: 'Bottom Speaker?' },
-    { name: 'showcamera', type: 'checkbox', checked: true, caption: 'Back Camera?' },
-    { name: 'showflash', type: 'checkbox', checked: true, caption: 'Back Flash?' },
-    { name: 'others', type: 'group', caption: 'Others' },
-    { name: 'segments', type: 'int', initial: 36, caption: 'Segments?' },
-    colorParameter({})
-  ]
-}
+const getParameterDefinitions = () => [
+  { name: 'rendering', type: 'group', caption: 'Render' },
+  { name: 'showscreen', type: 'checkbox', checked: true, caption: 'Touch Screen?' },
+  { name: 'showhome', type: 'checkbox', checked: true, caption: 'Home Buttom?' },
+  { name: 'showfrontcam', type: 'checkbox', checked: true, caption: 'Front Camera?' },
+  { name: 'showfrontsen', type: 'checkbox', checked: true, caption: 'Front Sensor?' },
+  { name: 'showfrontspk', type: 'checkbox', checked: true, caption: 'Front Speaker?' },
+  { name: 'showringsilent', type: 'checkbox', checked: true, caption: 'Ring/Silent Switch?' },
+  { name: 'showvolume', type: 'checkbox', checked: true, caption: 'Volume Switches?' },
+  { name: 'showpower', type: 'checkbox', checked: true, caption: 'Power Switch?' },
+  { name: 'showsim', type: 'checkbox', checked: true, caption: 'Sim Slot?' },
+  { name: 'showheadphone', type: 'checkbox', checked: true, caption: 'Headphone?' },
+  { name: 'showlight', type: 'checkbox', checked: true, caption: 'Power Port?' },
+  { name: 'showmic', type: 'checkbox', checked: true, caption: 'Bottom Microphones?' },
+  { name: 'showspeaker', type: 'checkbox', checked: true, caption: 'Bottom Speaker?' },
+  { name: 'showcamera', type: 'checkbox', checked: true, caption: 'Back Camera?' },
+  { name: 'showflash', type: 'checkbox', checked: true, caption: 'Back Flash?' },
+  { name: 'others', type: 'group', caption: 'Others' },
+  { name: 'segments', type: 'int', initial: 36, caption: 'Segments?' },
+  colorParameter({})
+]
 
 // the path must be centered at 0,0, and project into Y
 // the number of slices is determined by the number of path segements

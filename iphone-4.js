@@ -19,14 +19,12 @@ const colorParameter = (options) => {
   return { name, type, initial, caption, values, captions }
 }
 
-const getParameterDefinitions = () => {
-  return [
-    { name: 'iphone', type: 'group', caption: 'iPhone 4' },
-    colorParameter({}),
-    { name: 'others', type: 'group', caption: 'Other' },
-    { name: 'segments', type: 'int', initial: 32, caption: 'Resolution?', min: 18, max: 144, step: 18 }
-  ]
-}
+const getParameterDefinitions = () => [
+  { name: 'iphone', type: 'group', caption: 'iPhone 4' },
+  colorParameter({}),
+  { name: 'others', type: 'group', caption: 'Other' },
+  { name: 'segments', type: 'int', initial: 32, caption: 'Resolution?', min: 18, max: 144, step: 18 }
+]
 
 const iphone4 = (p) => {
   const iphone = {}

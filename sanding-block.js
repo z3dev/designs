@@ -22,25 +22,23 @@ const colorParameter = (options) => {
   return { name, type, initial, caption, values, captions }
 }
 
-const getParameterDefinitions = () => {
-  return [
-    { name: 'paper', type: 'group', caption: 'Paper' },
-    { name: 'p_thickness', type: 'float', initial: 0.95, caption: 'Thickness (mm)?', step: 0.05, min: 0.1, max: 2.0 },
-    { name: 'p_length', type: 'float', initial: 230.0, caption: 'Length (mm)?', step: 1.0, min: 5.0, max: 1000.0 },
-    { name: 'p_width', type: 'float', initial: 70.0, caption: 'Width (mm)?', step: 1.0, min: 1.0, max: 1000.0 },
-    { name: 'p_fold', type: 'float', initial: 20.0, caption: 'End Fold (mm)?', step: 1.0, min: 1.0, max: 1000.0 },
-    { name: 'p_use', type: 'checkbox', checked: true, caption: 'Use?' },
-    { name: 'block', type: 'group', caption: 'Sanding Block' },
-    { name: 'b_length', type: 'float', initial: 230.0, caption: 'Length (mm)?', step: 1.0, min: 5.0, max: 1000.0 },
-    { name: 'b_width', type: 'float', initial: 70.0, caption: 'Width (mm)?', step: 1.0, min: 1.0, max: 1000.0 },
-    { name: 'b_height', type: 'float', initial: 20.0, caption: 'Heigth (mm)?', step: 1.0, min: 1.0, max: 100.0 },
-    { name: 'b_corner', type: 'float', initial: 5.0, caption: 'Corner radius (mm)?', step: 0.5, min: 1.0, max: 100.0 },
-    { name: 'b_use', type: 'checkbox', checked: false, caption: 'Use?' },
-    { name: 'others', type: 'group', caption: 'Others' },
-    { name: 'segments', type: 'int', initial: 32, caption: 'Resolution?' },
-    colorParameter({})
-  ]
-}
+const getParameterDefinitions = () => [
+  { name: 'paper', type: 'group', caption: 'Paper' },
+  { name: 'p_thickness', type: 'float', initial: 0.95, caption: 'Thickness (mm)?', step: 0.05, min: 0.1, max: 2.0 },
+  { name: 'p_length', type: 'float', initial: 230.0, caption: 'Length (mm)?', step: 1.0, min: 5.0, max: 1000.0 },
+  { name: 'p_width', type: 'float', initial: 70.0, caption: 'Width (mm)?', step: 1.0, min: 1.0, max: 1000.0 },
+  { name: 'p_fold', type: 'float', initial: 20.0, caption: 'End Fold (mm)?', step: 1.0, min: 1.0, max: 1000.0 },
+  { name: 'p_use', type: 'checkbox', checked: true, caption: 'Use?' },
+  { name: 'block', type: 'group', caption: 'Sanding Block' },
+  { name: 'b_length', type: 'float', initial: 230.0, caption: 'Length (mm)?', step: 1.0, min: 5.0, max: 1000.0 },
+  { name: 'b_width', type: 'float', initial: 70.0, caption: 'Width (mm)?', step: 1.0, min: 1.0, max: 1000.0 },
+  { name: 'b_height', type: 'float', initial: 20.0, caption: 'Heigth (mm)?', step: 1.0, min: 1.0, max: 100.0 },
+  { name: 'b_corner', type: 'float', initial: 5.0, caption: 'Corner radius (mm)?', step: 0.5, min: 1.0, max: 100.0 },
+  { name: 'b_use', type: 'checkbox', checked: false, caption: 'Use?' },
+  { name: 'others', type: 'group', caption: 'Others' },
+  { name: 'segments', type: 'int', initial: 32, caption: 'Resolution?' },
+  colorParameter({})
+]
 
 const createGrip = (p) => {
   const r = 20 / 2

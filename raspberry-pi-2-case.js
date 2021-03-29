@@ -8,25 +8,23 @@ const { rotate, translate } = transforms
 const { extrudeLinear } = extrusions
 
 // parameter definitions
-const getParameterDefinitions = () => {
-  return [
-    { name: 'board', type: 'group', initial: 0, caption: 'Raspberry PI:' },
-    { name: 'board_v', type: 'checkbox', checked: true, caption: 'View?' },
-    { name: 'base', type: 'group', initial: 0, caption: 'Base:' },
-    { name: 'case_b_v', type: 'checkbox', checked: true, caption: 'View?' },
-    { name: 'cover', type: 'group', initial: 0, caption: 'Cover:' },
-    { name: 'case_c_v', type: 'checkbox', checked: true, caption: 'View?' },
-    { name: 'case_c_gap', type: 'int', initial: 2.0, caption: 'Rim Vent (mm)?', step: 1, min: 0 },
-    { name: 'case_c_dim', type: 'checkbox', checked: true, caption: 'Expose DIM Slot?' },
-    { name: 'case_c_led', type: 'checkbox', checked: true, caption: 'Expose LEDs?' },
-    { name: 'case_c_net', type: 'checkbox', checked: true, caption: 'Expose Network Port?' },
-    { name: 'case_c_usb1', type: 'checkbox', checked: true, caption: 'Expose USB Bank 1?' },
-    { name: 'case_c_usb2', type: 'checkbox', checked: true, caption: 'Expose USB Bank 2?' },
-    { name: 'case_c_add_s', type: 'checkbox', checked: true, caption: 'Addition Support?' },
-    { name: 'others', type: 'group', initial: 0, caption: 'Others Settings:' },
-    { name: 'segments', type: 'int', initial: 36, caption: 'Segments?' }
-  ]
-}
+const getParameterDefinitions = () => [
+  { name: 'board', type: 'group', initial: 0, caption: 'Raspberry PI:' },
+  { name: 'board_v', type: 'checkbox', checked: true, caption: 'View?' },
+  { name: 'base', type: 'group', initial: 0, caption: 'Base:' },
+  { name: 'case_b_v', type: 'checkbox', checked: true, caption: 'View?' },
+  { name: 'cover', type: 'group', initial: 0, caption: 'Cover:' },
+  { name: 'case_c_v', type: 'checkbox', checked: true, caption: 'View?' },
+  { name: 'case_c_gap', type: 'int', initial: 2.0, caption: 'Rim Vent (mm)?', step: 1, min: 0 },
+  { name: 'case_c_dim', type: 'checkbox', checked: true, caption: 'Expose DIM Slot?' },
+  { name: 'case_c_led', type: 'checkbox', checked: true, caption: 'Expose LEDs?' },
+  { name: 'case_c_net', type: 'checkbox', checked: true, caption: 'Expose Network Port?' },
+  { name: 'case_c_usb1', type: 'checkbox', checked: true, caption: 'Expose USB Bank 1?' },
+  { name: 'case_c_usb2', type: 'checkbox', checked: true, caption: 'Expose USB Bank 2?' },
+  { name: 'case_c_add_s', type: 'checkbox', checked: true, caption: 'Addition Support?' },
+  { name: 'others', type: 'group', initial: 0, caption: 'Others Settings:' },
+  { name: 'segments', type: 'int', initial: 36, caption: 'Segments?' }
+]
 
 //
 // A case for the Raspberry PI 2 computer boards.

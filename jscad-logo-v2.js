@@ -9,28 +9,26 @@ const { circle } = primitives
 const { extrudeLinear } = extrusions
 const { rotateZ, translate } = transforms
 
-const getParameterDefinitions = () => {
-  return [
-    { name: 'text', type: 'group', caption: 'Text' },
-    { name: 't_t', type: 'float', initial: 3.0, caption: 'Thickness (mm)?', step: 0.1, min: 1.0, max: 10.0 },
-    { name: 't_x', type: 'float', initial: 0.0, caption: 'X Offset (mm)?', step: 1.0, min: -100.0, max: 100.0 },
-    { name: 't_y', type: 'float', initial: 0.0, caption: 'Y Offset (mm)?', step: 1.0, min: -100.0, max: 100.0 },
-    { name: 't_c', type: 'color', initial: '#FFA000', caption: 'Color?' },
-    { name: 'outer', type: 'group', caption: 'Outer Circle' },
-    { name: 'o_o', type: 'float', initial: 10.0, caption: 'Offset from text (mm)?', step: 0.5, min: 1.0, max: 100.0 },
-    { name: 'o_t', type: 'float', initial: 1.0, caption: 'Thickness (mm)?', step: 0.1, min: 1.0, max: 10.0 },
-    { name: 'o_c', type: 'color', initial: '#01344E', caption: 'Color?' },
-    { name: 'inner', type: 'group', caption: 'Inner Circle' },
-    { name: 'i_i', type: 'float', initial: 20.0, caption: 'Inset from outer (mm)?', step: 0.5, min: 1.0, max: 100.0 },
-    { name: 'i_t', type: 'float', initial: 1.0, caption: 'Thickness (mm)?', step: 0.1, min: 1.0, max: 10.0 },
-    { name: 'i_x', type: 'float', initial: 11.0, caption: 'X Offset (mm)?', step: 1.0, min: -100.0, max: 100.0 },
-    { name: 'i_y', type: 'float', initial: 0.0, caption: 'Y Offset (mm)?', step: 1.0, min: -100.0, max: 100.0 },
-    { name: 'i_r', type: 'float', initial: 0.0, caption: 'Rotation?', step: 1.0, min: -180.0, max: 180.0 },
-    { name: 'i_c', type: 'color', initial: '#FF534F', caption: 'Color?' },
-    { name: 'others', type: 'group', caption: 'Others' },
-    { name: 'segments', type: 'int', initial: 72, caption: 'Segments?' }
-  ]
-}
+const getParameterDefinitions = () => [
+  { name: 'text', type: 'group', caption: 'Text' },
+  { name: 't_t', type: 'float', initial: 3.0, caption: 'Thickness (mm)?', step: 0.1, min: 1.0, max: 10.0 },
+  { name: 't_x', type: 'float', initial: 0.0, caption: 'X Offset (mm)?', step: 1.0, min: -100.0, max: 100.0 },
+  { name: 't_y', type: 'float', initial: 0.0, caption: 'Y Offset (mm)?', step: 1.0, min: -100.0, max: 100.0 },
+  { name: 't_c', type: 'color', initial: '#FFA000', caption: 'Color?' },
+  { name: 'outer', type: 'group', caption: 'Outer Circle' },
+  { name: 'o_o', type: 'float', initial: 10.0, caption: 'Offset from text (mm)?', step: 0.5, min: 1.0, max: 100.0 },
+  { name: 'o_t', type: 'float', initial: 1.0, caption: 'Thickness (mm)?', step: 0.1, min: 1.0, max: 10.0 },
+  { name: 'o_c', type: 'color', initial: '#01344E', caption: 'Color?' },
+  { name: 'inner', type: 'group', caption: 'Inner Circle' },
+  { name: 'i_i', type: 'float', initial: 20.0, caption: 'Inset from outer (mm)?', step: 0.5, min: 1.0, max: 100.0 },
+  { name: 'i_t', type: 'float', initial: 1.0, caption: 'Thickness (mm)?', step: 0.1, min: 1.0, max: 10.0 },
+  { name: 'i_x', type: 'float', initial: 11.0, caption: 'X Offset (mm)?', step: 1.0, min: -100.0, max: 100.0 },
+  { name: 'i_y', type: 'float', initial: 0.0, caption: 'Y Offset (mm)?', step: 1.0, min: -100.0, max: 100.0 },
+  { name: 'i_r', type: 'float', initial: 0.0, caption: 'Rotation?', step: 1.0, min: -180.0, max: 180.0 },
+  { name: 'i_c', type: 'color', initial: '#FF534F', caption: 'Color?' },
+  { name: 'others', type: 'group', caption: 'Others' },
+  { name: 'segments', type: 'int', initial: 72, caption: 'Segments?' }
+]
 
 // Colors:
 //   Lime F9FA65

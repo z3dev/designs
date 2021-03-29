@@ -176,16 +176,14 @@ const eight = (params) => {
   return subtract(cag101, cag111, cag121)
 }
 
-const getParameterDefinitions = () => {
-  return [
-    { name: 'ring', type: 'group', caption: 'Ring' },
-    { name: 'len', type: 'int', initial: 4, caption: 'Length?' },
-    { name: 'dia', type: 'int', initial: 20, caption: 'Center Diameter?' },
-    { name: 'thick', type: 'int', initial: 2, caption: 'Outer Walls?' },
-    { name: 'other', type: 'group', caption: 'Others' },
-    { name: 'segements', type: 'int', initial: 36, caption: 'Segments:' }
-  ]
-}
+const getParameterDefinitions = () => [
+  { name: 'ring', type: 'group', caption: 'Ring' },
+  { name: 'len', type: 'int', initial: 4, caption: 'Length?' },
+  { name: 'dia', type: 'int', initial: 20, caption: 'Center Diameter?' },
+  { name: 'thick', type: 'int', initial: 2, caption: 'Outer Walls?' },
+  { name: 'other', type: 'group', caption: 'Others' },
+  { name: 'segements', type: 'int', initial: 36, caption: 'Segments:' }
+]
 
 const main = (params) => {
   const nakaenshuu = params.dia / 2

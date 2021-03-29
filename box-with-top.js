@@ -5,26 +5,24 @@ const { extrudeLinear } = extrusions
 const { roundedCuboid, roundedRectangle } = primitives
 const { rotateX, translate } = transforms
 
-const getParameterDefinitions = () => {
-  return [
-    { name: 'bottoms', type: 'group', caption: 'Bottom' },
-    { name: 'bottom_show', type: 'checkbox', caption: 'Show?', checked: true },
-    { name: 'bottom_thickness', type: 'float', initial: 2.0, step: 0.5, caption: 'Thickness?' },
-    { name: 'bottom_length', type: 'int', initial: 150, caption: 'Length?' },
-    { name: 'bottom_width', type: 'int', initial: 100, caption: 'Width?' },
-    { name: 'sides', type: 'group', caption: 'Sides' },
-    { name: 'side_thickness', type: 'float', initial: 2.0, caption: 'Thickness?', min: 1.0, step: 0.1 },
-    { name: 'side_height', type: 'int', initial: 50, caption: 'Height?', step: 5, min: 5 },
-    { name: 'corner_radius', type: 'float', initial: 0.50, caption: 'Corners?', step: 0.5, min: 0.5 },
-    { name: 'tops', type: 'group', caption: 'Top' },
-    { name: 'top_show', type: 'checkbox', caption: 'Show?', checked: true },
-    { name: 'top_thickness', type: 'float', initial: 2.0, caption: 'Thickness?', step: 0.5, min: 1.0 },
-    { name: 'top_height', type: 'int', initial: 35, caption: 'Height?', step: 5, min: 5 },
-    { name: 'others', type: 'group', caption: 'Others' },
-    { name: 'explode', type: 'checkbox', caption: 'Explode?', checked: false },
-    { name: 'segments', type: 'int', initial: 36, caption: 'Segments:' }
-  ]
-}
+const getParameterDefinitions = () => [
+  { name: 'bottoms', type: 'group', caption: 'Bottom' },
+  { name: 'bottom_show', type: 'checkbox', caption: 'Show?', checked: true },
+  { name: 'bottom_thickness', type: 'float', initial: 2.0, step: 0.5, caption: 'Thickness?' },
+  { name: 'bottom_length', type: 'int', initial: 150, caption: 'Length?' },
+  { name: 'bottom_width', type: 'int', initial: 100, caption: 'Width?' },
+  { name: 'sides', type: 'group', caption: 'Sides' },
+  { name: 'side_thickness', type: 'float', initial: 2.0, caption: 'Thickness?', min: 1.0, step: 0.1 },
+  { name: 'side_height', type: 'int', initial: 50, caption: 'Height?', step: 5, min: 5 },
+  { name: 'corner_radius', type: 'float', initial: 0.50, caption: 'Corners?', step: 0.5, min: 0.5 },
+  { name: 'tops', type: 'group', caption: 'Top' },
+  { name: 'top_show', type: 'checkbox', caption: 'Show?', checked: true },
+  { name: 'top_thickness', type: 'float', initial: 2.0, caption: 'Thickness?', step: 0.5, min: 1.0 },
+  { name: 'top_height', type: 'int', initial: 35, caption: 'Height?', step: 5, min: 5 },
+  { name: 'others', type: 'group', caption: 'Others' },
+  { name: 'explode', type: 'checkbox', caption: 'Explode?', checked: false },
+  { name: 'segments', type: 'int', initial: 36, caption: 'Segments:' }
+]
 
 // A simple design for a box with a top
 // By JAG

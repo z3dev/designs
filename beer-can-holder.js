@@ -9,28 +9,26 @@ const { measureBoundingBox } = measurements
 const { circle, cuboid, cylinder, rectangle, roundedCuboid } = primitives
 const { center, translate } = transforms
 
-const getParameterDefinitions = () => {
-  return [
-    { name: 'handle', type: 'group', caption: 'Handle' },
-    { name: 'handle_offset', type: 'int', initial: 22, caption: 'Offset for fingers?' },
-    { name: 'handle_thickness', type: 'int', initial: 10, caption: 'Thickness?' },
-    { name: 'handle_width', type: 'int', initial: 20, caption: 'Width?' },
-    { name: 'can', type: 'group', caption: 'Can' },
-    { name: 'can_show', type: 'checkbox', checked: true, caption: 'Show?' },
-    { name: 'can_diameter', type: 'int', initial: 66, caption: 'Diameter?' },
-    { name: 'can_height', type: 'int', initial: 116, caption: 'Height?' },
-    { name: 'can_lip', type: 'group', caption: 'Top Lip' },
-    { name: 'can_lip_diameter', type: 'int', initial: 57, caption: 'Outside Diameter?' },
-    { name: 'can_lip_thickness', type: 'float', initial: 2.0, step: 0.1, caption: 'Thickness?' },
-    { name: 'can_lip_height', type: 'float', initial: 3.0, step: 0.1, caption: 'Height?' },
-    { name: 'can_bot', type: 'group', caption: 'Bottom Lip' },
-    { name: 'can_bot_diameter', type: 'int', initial: 53, caption: 'Outside Diameter?' },
-    { name: 'can_bot_thickness', type: 'float', initial: 4.0, step: 0.1, caption: 'Thickness?' },
-    { name: 'can_bot_height', type: 'float', initial: 3.0, step: 0.1, caption: 'Height?' },
-    { name: 'others', type: 'group', caption: 'Others' },
-    { name: 'segments', type: 'int', initial: 36, caption: 'Segments?' }
-  ]
-}
+const getParameterDefinitions = () => [
+  { name: 'handle', type: 'group', caption: 'Handle' },
+  { name: 'handle_offset', type: 'int', initial: 22, caption: 'Offset for fingers?' },
+  { name: 'handle_thickness', type: 'int', initial: 10, caption: 'Thickness?' },
+  { name: 'handle_width', type: 'int', initial: 20, caption: 'Width?' },
+  { name: 'can', type: 'group', caption: 'Can' },
+  { name: 'can_show', type: 'checkbox', checked: true, caption: 'Show?' },
+  { name: 'can_diameter', type: 'int', initial: 66, caption: 'Diameter?' },
+  { name: 'can_height', type: 'int', initial: 116, caption: 'Height?' },
+  { name: 'can_lip', type: 'group', caption: 'Top Lip' },
+  { name: 'can_lip_diameter', type: 'int', initial: 57, caption: 'Outside Diameter?' },
+  { name: 'can_lip_thickness', type: 'float', initial: 2.0, step: 0.1, caption: 'Thickness?' },
+  { name: 'can_lip_height', type: 'float', initial: 3.0, step: 0.1, caption: 'Height?' },
+  { name: 'can_bot', type: 'group', caption: 'Bottom Lip' },
+  { name: 'can_bot_diameter', type: 'int', initial: 53, caption: 'Outside Diameter?' },
+  { name: 'can_bot_thickness', type: 'float', initial: 4.0, step: 0.1, caption: 'Thickness?' },
+  { name: 'can_bot_height', type: 'float', initial: 3.0, step: 0.1, caption: 'Height?' },
+  { name: 'others', type: 'group', caption: 'Others' },
+  { name: 'segments', type: 'int', initial: 36, caption: 'Segments?' }
+]
 
 // A handle for beer cans (and other cans as well)
 // By JAG

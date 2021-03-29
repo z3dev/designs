@@ -87,20 +87,18 @@ const buckle = (p) => {
   return extrudeLinear({ height: p.mount_base }, b3)
 }
 
-const getParameterDefinitions = () => {
-  return [
-    { name: 'lens', type: 'group', caption: 'Lens' },
-    { name: 'lens_diameter', type: 'int', initial: 77, caption: 'Diameter (mm)?' },
-    { name: 'strap', type: 'group', caption: 'Strap' },
-    { name: 'strap_width', type: 'int', initial: 40, caption: 'Width (mm)?' },
-    { name: 'buckle', type: 'group', caption: 'Buckle' },
-    { name: 'buckle_gap', type: 'int', initial: 6, caption: 'Gap for strap (mm)?' },
-    { name: 'buckle_split', type: 'int', initial: 0, caption: 'Split for strap (mm or 0)?' },
-    { name: 'buckle_fill', type: 'choice', initial: 'hollow', caption: 'Base?', values: ['hollow', 'solid'], captions: ['Hollow', 'Solid'] },
-    { name: 'others', type: 'group', caption: 'Others' },
-    { name: 'segments', type: 'int', initial: 36, min: 16, max: 144, caption: 'Segments?' }
-  ]
-}
+const getParameterDefinitions = () => [
+  { name: 'lens', type: 'group', caption: 'Lens' },
+  { name: 'lens_diameter', type: 'int', initial: 77, caption: 'Diameter (mm)?' },
+  { name: 'strap', type: 'group', caption: 'Strap' },
+  { name: 'strap_width', type: 'int', initial: 40, caption: 'Width (mm)?' },
+  { name: 'buckle', type: 'group', caption: 'Buckle' },
+  { name: 'buckle_gap', type: 'int', initial: 6, caption: 'Gap for strap (mm)?' },
+  { name: 'buckle_split', type: 'int', initial: 0, caption: 'Split for strap (mm or 0)?' },
+  { name: 'buckle_fill', type: 'choice', initial: 'hollow', caption: 'Base?', values: ['hollow', 'solid'], captions: ['Hollow', 'Solid'] },
+  { name: 'others', type: 'group', caption: 'Others' },
+  { name: 'segments', type: 'int', initial: 36, min: 16, max: 144, caption: 'Segments?' }
+]
 
 const main = (parameters) => {
   const tolerance = 0.35 // XY precision of 3D printer

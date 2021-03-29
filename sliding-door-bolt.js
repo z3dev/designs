@@ -9,26 +9,24 @@ const { extrudeLinear } = require('@jscad/modeling').extrusions
 const { degToRad } = require('@jscad/modeling').utils
 const { measureBoundingBox } = require('@jscad/modeling').measurements
 
-const getParameterDefinitions = () => {
-  return [
-    { name: 'bolt', type: 'group', caption: 'Bolt' },
-    { name: 'bolt_diameter', type: 'float', initial: 10.0, min: 2.0, max: 50.0, step: 1.0, caption: 'Diameter:' },
-    { name: 'bolt_travel', type: 'float', initial: 45.0, min: 10.0, max: 100.0, step: 1.0, caption: 'Travel:' },
-    { name: 'bolt_handle', type: 'float', initial: 30.0, min: 0.0, max: 50.0, step: 1.0, caption: 'Handle:' },
-    { name: 'bolt_style', type: 'choice', initial: 'left', caption: 'Style:', values: ['left', 'right', 'both', 'none'], captions: ['Left', 'Right', 'Both', 'None'] },
-    { name: 'bolt_lead', type: 'float', initial: 30.0, min: 0.0, max: 100.0, step: 1.0, caption: 'Extra Length:' },
-    { name: 'base', type: 'group', caption: 'Base' },
-    { name: 'base_weight', type: 'float', initial: 3.0, min: 2.0, max: 10.0, step: 1.0, caption: 'Thickness:' },
-    { name: 'base_width', type: 'float', initial: 30.0, min: 10.0, max: 100.0, step: 1.0, caption: 'Width:' },
-    { name: 'screw_size', type: 'float', initial: 3.0, min: 1.0, max: 10.0, step: 0.25, caption: 'Holes:' },
-    { name: 'flanges', type: 'group', caption: 'Flanges' },
-    { name: 'bolt_center', type: 'float', initial: 20.0, min: 5.0, max: 75.0, step: 1.0, caption: 'Bolt Center:' },
-    { name: 'flange_weight', type: 'float', initial: 5.0, min: 2.0, max: 10.0, step: 1.0, caption: 'Thickness:' },
-    { name: 'others', type: 'group', caption: 'Other' },
-    { name: 'display', type: 'choice', initial: 'in', caption: 'Display Bolt:', values: ['zero', 'out', 'in'], captions: ['Centered', 'Extended', 'Retracted'] },
-    { name: 'segments', type: 'int', initial: 18, min: 18, max: 72, step: 6, caption: 'Segments?' }
-  ]
-}
+const getParameterDefinitions = () => [
+  { name: 'bolt', type: 'group', caption: 'Bolt' },
+  { name: 'bolt_diameter', type: 'float', initial: 10.0, min: 2.0, max: 50.0, step: 1.0, caption: 'Diameter:' },
+  { name: 'bolt_travel', type: 'float', initial: 45.0, min: 10.0, max: 100.0, step: 1.0, caption: 'Travel:' },
+  { name: 'bolt_handle', type: 'float', initial: 30.0, min: 0.0, max: 50.0, step: 1.0, caption: 'Handle:' },
+  { name: 'bolt_style', type: 'choice', initial: 'left', caption: 'Style:', values: ['left', 'right', 'both', 'none'], captions: ['Left', 'Right', 'Both', 'None'] },
+  { name: 'bolt_lead', type: 'float', initial: 30.0, min: 0.0, max: 100.0, step: 1.0, caption: 'Extra Length:' },
+  { name: 'base', type: 'group', caption: 'Base' },
+  { name: 'base_weight', type: 'float', initial: 3.0, min: 2.0, max: 10.0, step: 1.0, caption: 'Thickness:' },
+  { name: 'base_width', type: 'float', initial: 30.0, min: 10.0, max: 100.0, step: 1.0, caption: 'Width:' },
+  { name: 'screw_size', type: 'float', initial: 3.0, min: 1.0, max: 10.0, step: 0.25, caption: 'Holes:' },
+  { name: 'flanges', type: 'group', caption: 'Flanges' },
+  { name: 'bolt_center', type: 'float', initial: 20.0, min: 5.0, max: 75.0, step: 1.0, caption: 'Bolt Center:' },
+  { name: 'flange_weight', type: 'float', initial: 5.0, min: 2.0, max: 10.0, step: 1.0, caption: 'Thickness:' },
+  { name: 'others', type: 'group', caption: 'Other' },
+  { name: 'display', type: 'choice', initial: 'in', caption: 'Display Bolt:', values: ['zero', 'out', 'in'], captions: ['Centered', 'Extended', 'Retracted'] },
+  { name: 'segments', type: 'int', initial: 18, min: 18, max: 72, step: 6, caption: 'Segments?' }
+]
 
 const scaleBy = (obj, byx, byy, byz) => {
   byx = byx || 0.0

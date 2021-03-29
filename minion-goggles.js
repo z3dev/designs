@@ -25,25 +25,23 @@ const colorParameter = (options) => {
   return { name, type, initial, caption, values, captions }
 }
 
-const getParameterDefinitions = () => {
-  return [
-    { name: 'face', type: 'group', caption: 'Face Dimensions' },
-    { name: 'pupils_d', type: 'int', initial: 65, caption: 'Distance between pupils? (mm)' },
-    { name: 'face_d', type: 'int', initial: 140, caption: 'Distance across cheek bones? (mm)' },
-    { name: 'forehead_f', type: 'int', initial: 30, caption: 'Distance across flat area of forehead? (mm)' },
-    { name: 'nose', type: 'group', caption: 'Nose Dimensions' },
-    { name: 'nose_width', type: 'int', initial: 26, caption: 'Width across nostrals? (mm)' },
-    { name: 'nose_height', type: 'int', initial: 23, caption: 'Height of bridge? (mm)' },
-    { name: 'nose_angle', type: 'int', initial: 30, caption: 'Angle of bridge? (mm)' },
-    { name: 'nose_offset', type: 'int', initial: 10, caption: 'Start point of bridge? (mm)' },
-    { name: 'strap', type: 'group', caption: 'Straps' },
-    { name: 'strap_w', type: 'int', initial: 12, caption: 'Width? (mm)' },
-    { name: 'strap_t', type: 'int', initial: 1, caption: 'Thickness? (mm)' },
-    { name: 'others', type: 'group', caption: 'Others' },
-    { name: 'segments', type: 'int', initial: 32, caption: 'Segments?' },
-    colorParameter({})
-  ]
-}
+const getParameterDefinitions = () => [
+  { name: 'face', type: 'group', caption: 'Face Dimensions' },
+  { name: 'pupils_d', type: 'int', initial: 65, caption: 'Distance between pupils? (mm)' },
+  { name: 'face_d', type: 'int', initial: 140, caption: 'Distance across cheek bones? (mm)' },
+  { name: 'forehead_f', type: 'int', initial: 30, caption: 'Distance across flat area of forehead? (mm)' },
+  { name: 'nose', type: 'group', caption: 'Nose Dimensions' },
+  { name: 'nose_width', type: 'int', initial: 26, caption: 'Width across nostrals? (mm)' },
+  { name: 'nose_height', type: 'int', initial: 23, caption: 'Height of bridge? (mm)' },
+  { name: 'nose_angle', type: 'int', initial: 30, caption: 'Angle of bridge? (mm)' },
+  { name: 'nose_offset', type: 'int', initial: 10, caption: 'Start point of bridge? (mm)' },
+  { name: 'strap', type: 'group', caption: 'Straps' },
+  { name: 'strap_w', type: 'int', initial: 12, caption: 'Width? (mm)' },
+  { name: 'strap_t', type: 'int', initial: 1, caption: 'Thickness? (mm)' },
+  { name: 'others', type: 'group', caption: 'Others' },
+  { name: 'segments', type: 'int', initial: 32, caption: 'Segments?' },
+  colorParameter({})
+]
 
 // the path must be centered at 0,0, and project into Y
 // the number of slices is determined by the number of path segements

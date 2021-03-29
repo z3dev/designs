@@ -6,28 +6,26 @@ const { hull } = hulls
 const { circle, cylinder, rectangle } = primitives
 const { rotateY, translate } = transforms
 
-const getParameterDefinitions = () => {
-  return [
-    { name: 'rails', type: 'group', caption: 'Rails' },
-    { name: 'rail_d', type: 'int', initial: 11, caption: 'Diameter (mm)?' },
-    { name: 'edges', type: 'group', caption: 'Edges' },
-    { name: 'edge_v', type: 'int', initial: 18, caption: 'Height (mm)?' },
-    { name: 'edge_h', type: 'int', initial: 12, caption: 'Thickness (mm)?' },
-    { name: 'holders', type: 'group', caption: 'Holders' },
-    { name: 'type', type: 'choice', initial: 0, caption: 'Type?', values: [0, 1, 2], captions: ['Right', 'Left', 'Middle'] },
-    { name: 'offset_v', type: 'int', initial: 5, caption: 'Vertical Offset (mm)?' },
-    { name: 'offset_h', type: 'int', initial: 30, caption: 'Horizontal Offset (mm)?' },
-    { name: 'cap_l', type: 'int', initial: 15, caption: 'Length (mm)?' },
-    { name: 'flanges', type: 'group', caption: 'Flanges' },
-    { name: 'flange_v', type: 'int', initial: 40, caption: 'Height (mm)?' },
-    { name: 'flange_a', type: 'int', initial: 40, caption: 'Arch (mm)?' },
-    { name: 'screws', type: 'group', caption: 'Screws' },
-    { name: 'screw_h_d', type: 'float', initial: 5.25, step: 0.25, caption: 'Head Diameter (mm)?' },
-    { name: 'screw_s_d', type: 'float', initial: 3.25, step: 0.25, caption: 'Shank Diameter (mm)?' },
-    { name: 'others', type: 'group', caption: 'Others' },
-    { name: 'segments', type: 'int', initial: 36, caption: 'Resolution?' }
-  ]
-}
+const getParameterDefinitions = () => [
+  { name: 'rails', type: 'group', caption: 'Rails' },
+  { name: 'rail_d', type: 'int', initial: 11, caption: 'Diameter (mm)?' },
+  { name: 'edges', type: 'group', caption: 'Edges' },
+  { name: 'edge_v', type: 'int', initial: 18, caption: 'Height (mm)?' },
+  { name: 'edge_h', type: 'int', initial: 12, caption: 'Thickness (mm)?' },
+  { name: 'holders', type: 'group', caption: 'Holders' },
+  { name: 'type', type: 'choice', initial: 0, caption: 'Type?', values: [0, 1, 2], captions: ['Right', 'Left', 'Middle'] },
+  { name: 'offset_v', type: 'int', initial: 5, caption: 'Vertical Offset (mm)?' },
+  { name: 'offset_h', type: 'int', initial: 30, caption: 'Horizontal Offset (mm)?' },
+  { name: 'cap_l', type: 'int', initial: 15, caption: 'Length (mm)?' },
+  { name: 'flanges', type: 'group', caption: 'Flanges' },
+  { name: 'flange_v', type: 'int', initial: 40, caption: 'Height (mm)?' },
+  { name: 'flange_a', type: 'int', initial: 40, caption: 'Arch (mm)?' },
+  { name: 'screws', type: 'group', caption: 'Screws' },
+  { name: 'screw_h_d', type: 'float', initial: 5.25, step: 0.25, caption: 'Head Diameter (mm)?' },
+  { name: 'screw_s_d', type: 'float', initial: 3.25, step: 0.25, caption: 'Shank Diameter (mm)?' },
+  { name: 'others', type: 'group', caption: 'Others' },
+  { name: 'segments', type: 'int', initial: 36, caption: 'Resolution?' }
+]
 
 const makeBoltHole = (p) => {
   const fit = 0.20

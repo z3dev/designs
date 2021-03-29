@@ -8,21 +8,19 @@ const { mat4 } = maths
 const { circle, cylinder, roundedRectangle } = primitives
 const { mirrorX, rotateZ, translate } = transforms
 
-const getParameterDefinitions = () => {
-  return [
-    { name: 'basket', type: 'group', caption: 'Desktop Waste Basket' },
-    { name: 'b_z', type: 'int', initial: 100, min: 10, max: 1000, step: 1, caption: 'Height (mm)?' },
-    { name: 'b_td', type: 'int', initial: 90, min: 10, max: 500, step: 1, caption: 'Top Diameter (mm)?' },
-    { name: 'b_bd', type: 'int', initial: 75, min: 10, max: 500, step: 1, caption: 'Bottom Diameter (mm)?' },
-    { name: 'mesh', type: 'group', caption: 'Mesh' },
-    { name: 'm_d', type: 'float', initial: 2.4, min: 1.0, max: 10.0, step: 0.1, caption: 'Diameter (mm)?' },
-    { name: 'm_a', type: 'int', initial: 20, min: 15, max: 50, step: 1, caption: 'Angle (degrees)?' },
-    { name: 'm_h', type: 'int', initial: 20, min: 1, max: 30, step: 1, caption: 'Gap Size (mm)?' },
-    { name: 'm_s', type: 'int', initial: 8, min: 4, max: 144, step: 4, caption: 'Segments?' },
-    { name: 'others', type: 'group', caption: 'Others' },
-    { name: 'segments', type: 'int', initial: 32, min: 16, max: 144, step: 4, caption: 'Segments?' }
-  ]
-}
+const getParameterDefinitions = () => [
+  { name: 'basket', type: 'group', caption: 'Desktop Waste Basket' },
+  { name: 'b_z', type: 'int', initial: 100, min: 10, max: 1000, step: 1, caption: 'Height (mm)?' },
+  { name: 'b_td', type: 'int', initial: 90, min: 10, max: 500, step: 1, caption: 'Top Diameter (mm)?' },
+  { name: 'b_bd', type: 'int', initial: 75, min: 10, max: 500, step: 1, caption: 'Bottom Diameter (mm)?' },
+  { name: 'mesh', type: 'group', caption: 'Mesh' },
+  { name: 'm_d', type: 'float', initial: 2.4, min: 1.0, max: 10.0, step: 0.1, caption: 'Diameter (mm)?' },
+  { name: 'm_a', type: 'int', initial: 20, min: 15, max: 50, step: 1, caption: 'Angle (degrees)?' },
+  { name: 'm_h', type: 'int', initial: 20, min: 1, max: 30, step: 1, caption: 'Gap Size (mm)?' },
+  { name: 'm_s', type: 'int', initial: 8, min: 4, max: 144, step: 4, caption: 'Segments?' },
+  { name: 'others', type: 'group', caption: 'Others' },
+  { name: 'segments', type: 'int', initial: 32, min: 16, max: 144, step: 4, caption: 'Segments?' }
+]
 
 const createTwistCW = (p) => {
   let o = circle({ radius: p.m_r, segments: p.m_s })

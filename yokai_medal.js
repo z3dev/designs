@@ -8,9 +8,7 @@ const { measureBoundingBox } = require('@jscad/modeling').measurements
 const { path2 } = require('@jscad/modeling').geometries
 const { colorize, cssColors, hexToRgb, rgbToHex } = require('@jscad/modeling').colors
 
-const segmentToPath = (segment) => {
-  return path2.fromPoints({ close: false }, segment)
-}
+const segmentToPath = (segment) => path2.fromPoints({ close: false }, segment)
 
 const imprint = (p) => {
   p.inscription = p.inscription.replace('\\n', '\n')
@@ -137,22 +135,20 @@ const colorParameter = (options) => {
   return { name, type, initial, caption, values, captions }
 }
 
-const getParameterDefinitions = () => {
-  return [
-    { name: 'front', type: 'group', caption: 'Front' },
-    { name: 'style', type: 'choice', initial: 1, caption: 'Face Style?', values: [1, 0], captions: ['Normal', 'Flat'] },
-    { name: 'back', type: 'group', caption: 'Back' },
-    { name: 'row_1', type: 'text', initial: '1011', caption: 'ROW 1?' },
-    { name: 'row_2', type: 'text', initial: '0001', caption: 'ROW 2?' },
-    { name: 'row_3', type: 'text', initial: '0111', caption: 'ROW 3?' },
-    { name: 'row_4', type: 'text', initial: '0101', caption: 'ROW 4?' },
-    { name: 'inscription', type: 'text', initial: '', caption: 'Caption (0-20 letters)?' },
-    { name: 'imprint', type: 'choice', initial: 0, caption: 'Rendering?', values: [0, 1], captions: ['Imprinted', 'Raised'] },
-    { name: 'others', type: 'group', caption: 'Others' },
-    { name: 'segments', type: 'int', initial: 36, caption: 'Resolution:' },
-    colorParameter({})
-  ]
-}
+const getParameterDefinitions = () => [
+  { name: 'front', type: 'group', caption: 'Front' },
+  { name: 'style', type: 'choice', initial: 1, caption: 'Face Style?', values: [1, 0], captions: ['Normal', 'Flat'] },
+  { name: 'back', type: 'group', caption: 'Back' },
+  { name: 'row_1', type: 'text', initial: '1011', caption: 'ROW 1?' },
+  { name: 'row_2', type: 'text', initial: '0001', caption: 'ROW 2?' },
+  { name: 'row_3', type: 'text', initial: '0111', caption: 'ROW 3?' },
+  { name: 'row_4', type: 'text', initial: '0101', caption: 'ROW 4?' },
+  { name: 'inscription', type: 'text', initial: '', caption: 'Caption (0-20 letters)?' },
+  { name: 'imprint', type: 'choice', initial: 0, caption: 'Rendering?', values: [0, 1], captions: ['Imprinted', 'Raised'] },
+  { name: 'others', type: 'group', caption: 'Others' },
+  { name: 'segments', type: 'int', initial: 36, caption: 'Resolution:' },
+  colorParameter({})
+]
 
 const main = (p) => {
   p.xy_tolerence = 0.320 / 2

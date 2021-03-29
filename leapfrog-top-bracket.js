@@ -4,21 +4,19 @@ const { subtract, union } = booleans
 const { cylinder, cuboid } = primitives
 const { translate } = transforms
 
-const getParameterDefinitions = () => {
-  return [
-    { name: 'creatr', type: 'group', initial: 10, caption: 'Printer Top' },
-    { name: 'plate_width', type: 'int', initial: 120, caption: 'Width (mm)?' },
-    { name: 'plate_weight', type: 'int', initial: 4, caption: 'Weight (mm)?' },
-    { name: 'bracket', type: 'group', initial: 10, caption: 'Bracket' },
-    { name: 'bracket_width', type: 'int', initial: 20, caption: 'Width (mm)?' },
-    { name: 'hole_offset', type: 'int', initial: 68, caption: 'Bolt Offset (mm)?' },
-    { name: 'bolt', type: 'group', initial: 10, caption: 'Bolts' },
-    { name: 'hole_size', type: 'int', initial: 3, caption: 'Shank (mm)?' },
-    { name: 'nut', type: 'group', initial: 10, caption: 'Nuts' },
-    { name: 'nut_size', type: 'int', initial: 6, caption: 'Width (mm)?' },
-    { name: 'nut_weight', type: 'int', initial: 3, caption: 'Weight (mm)?' }
-  ]
-}
+const getParameterDefinitions = () => [
+  { name: 'creatr', type: 'group', initial: 10, caption: 'Printer Top' },
+  { name: 'plate_width', type: 'int', initial: 120, caption: 'Width (mm)?' },
+  { name: 'plate_weight', type: 'int', initial: 4, caption: 'Weight (mm)?' },
+  { name: 'bracket', type: 'group', initial: 10, caption: 'Bracket' },
+  { name: 'bracket_width', type: 'int', initial: 20, caption: 'Width (mm)?' },
+  { name: 'hole_offset', type: 'int', initial: 68, caption: 'Bolt Offset (mm)?' },
+  { name: 'bolt', type: 'group', initial: 10, caption: 'Bolts' },
+  { name: 'hole_size', type: 'int', initial: 3, caption: 'Shank (mm)?' },
+  { name: 'nut', type: 'group', initial: 10, caption: 'Nuts' },
+  { name: 'nut_size', type: 'int', initial: 6, caption: 'Width (mm)?' },
+  { name: 'nut_weight', type: 'int', initial: 3, caption: 'Weight (mm)?' }
+]
 
 // Leapfrog Creatr Top Bracket
 // By Z3 Development

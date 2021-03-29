@@ -4,28 +4,26 @@ const { intersect, subtract, union } = booleans
 const { cuboid, cylinder, roundedCuboid } = primitives
 const { rotateX, rotateZ, translate } = transforms
 
-const getParameterDefinitions = () => {
-  return [
-    { name: 'cabinet', type: 'group', caption: 'Cabinet' },
-    { name: 'c_top', type: 'float', initial: 13, step: 0.25, caption: 'Top Thickness (mm)?' },
-    { name: 'c_frm', type: 'float', initial: 27, step: 0.25, caption: 'Frame Width (mm)?' },
-    { name: 'c_ins', type: 'float', initial: 3, step: 0.25, caption: 'Frame Inset (mm)?' },
-    { name: 'anchor', type: 'group', caption: 'Anchor' },
-    { name: 'a_rgt', type: 'float', initial: 20.0, step: 0.25, caption: 'Right-hand Offset (mm)?' },
-    { name: 'a_lft', type: 'float', initial: 17.0, step: 0.25, caption: 'Left-hand Offset (mm)?' },
-    { name: 'a_len', type: 'float', initial: 60.0, step: 0.25, caption: 'Length (mm)?' },
-    { name: 'a_fit', type: 'float', initial: 1.0, step: 0.05, caption: 'Tolerence (mm)?' },
-    { name: 'mscrews', type: 'group', caption: 'Main Screw' },
-    { name: 'm_head', type: 'float', initial: 7.80, step: 0.10, caption: 'Head Diamerter (mm)?' },
-    { name: 'm_shnk', type: 'float', initial: 4.10, step: 0.10, caption: 'Shank Diameter (mm)?' },
-    { name: 'sscrews', type: 'group', caption: 'Side Screws' },
-    { name: 's_head', type: 'float', initial: 5.80, step: 0.10, caption: 'Head Diamerter (mm)?' },
-    { name: 's_shnk', type: 'float', initial: 3.10, step: 0.10, caption: 'Shank Diameter (mm)?' },
-    { name: 's_numb', type: 'int', initial: 4, caption: 'Number?' },
-    { name: 'others', type: 'group', caption: 'Others' },
-    { name: 'resolution', type: 'int', initial: 18, caption: 'Resolution?' }
-  ]
-}
+const getParameterDefinitions = () => [
+  { name: 'cabinet', type: 'group', caption: 'Cabinet' },
+  { name: 'c_top', type: 'float', initial: 13, step: 0.25, caption: 'Top Thickness (mm)?' },
+  { name: 'c_frm', type: 'float', initial: 27, step: 0.25, caption: 'Frame Width (mm)?' },
+  { name: 'c_ins', type: 'float', initial: 3, step: 0.25, caption: 'Frame Inset (mm)?' },
+  { name: 'anchor', type: 'group', caption: 'Anchor' },
+  { name: 'a_rgt', type: 'float', initial: 20.0, step: 0.25, caption: 'Right-hand Offset (mm)?' },
+  { name: 'a_lft', type: 'float', initial: 17.0, step: 0.25, caption: 'Left-hand Offset (mm)?' },
+  { name: 'a_len', type: 'float', initial: 60.0, step: 0.25, caption: 'Length (mm)?' },
+  { name: 'a_fit', type: 'float', initial: 1.0, step: 0.05, caption: 'Tolerence (mm)?' },
+  { name: 'mscrews', type: 'group', caption: 'Main Screw' },
+  { name: 'm_head', type: 'float', initial: 7.80, step: 0.10, caption: 'Head Diamerter (mm)?' },
+  { name: 'm_shnk', type: 'float', initial: 4.10, step: 0.10, caption: 'Shank Diameter (mm)?' },
+  { name: 'sscrews', type: 'group', caption: 'Side Screws' },
+  { name: 's_head', type: 'float', initial: 5.80, step: 0.10, caption: 'Head Diamerter (mm)?' },
+  { name: 's_shnk', type: 'float', initial: 3.10, step: 0.10, caption: 'Shank Diameter (mm)?' },
+  { name: 's_numb', type: 'int', initial: 4, caption: 'Number?' },
+  { name: 'others', type: 'group', caption: 'Others' },
+  { name: 'resolution', type: 'int', initial: 18, caption: 'Resolution?' }
+]
 
 // given the screw dimensions, create a hole to fit
 const createHole = (d) => {

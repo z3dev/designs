@@ -1,6 +1,6 @@
 // Import from SVG
 
-function logoOutline () {
+const logoOutline = () => {
   // full outline
   let cag101 = new CSG.Path2D([[18.055555555555557, -4.034391534391535]], false)
   cag101 = cag101.appendBezier([[5.291005291005291, -3.981481481481482], [1.8227513227513228, -4.0396825396825395], [1.716931216931217, -4.298941798941799]])
@@ -116,7 +116,7 @@ function logoOutline () {
   return cag101
 }
 
-function logoPositive (params) {
+const logoPositive = (params) => {
   let cag0 = new CAG()
   let cag1 = new CAG()
   let cag10 = new CAG()
@@ -237,7 +237,7 @@ function logoPositive (params) {
 
   // scout emblum outline
   let cag11 = new CAG()
-  var cag111 = new CSG.Path2D([[165.87301587301587, -8.06878306878307]], false)
+  let cag111 = new CSG.Path2D([[165.87301587301587, -8.06878306878307]], false)
   cag111 = cag111.appendBezier([[166.0185185185185, -8.142857142857144], [166.9920634920635, -9.362433862433862], [168.03968253968256, -10.780423280423282]])
   cag111 = cag111.appendBezier([[169.0846560846561, -12.1984126984127], [170.76719576719577, -14.60846560846561], [171.7804232804233, -16.13756613756614]])
   cag111 = cag111.appendBezier([[172.79365079365078, -17.666666666666668], [174.3174603174603, -20.343915343915345], [175.17195767195767, -22.089947089947092]])
@@ -645,7 +645,7 @@ function logoPositive (params) {
   cag110 = cag110.union(cag1101)
   cag1 = cag1.union(cag110)
 
-  var cag111 = new CAG()
+  cag111 = new CAG()
   let cag1111 = new CSG.Path2D([[158.86243386243387, -63.47619047619048]], false)
   cag1111 = cag1111.appendBezier([[157.0899470899471, -63.48148148148149], [156.10582010582013, -63.592592592592595], [155.8809523809524, -63.817460317460316]])
   cag1111 = cag1111.appendBezier([[155.6984126984127, -64.0026455026455], [155.54761904761907, -64.39153439153439], [155.54761904761907, -64.68253968253968]])
@@ -750,26 +750,23 @@ function logoPositive (params) {
   return cag0
 }
 
-function getParameterDefinitions () {
-  return [
-    { name: 'emblem', type: 'group', caption: 'Emblem (1 unit = 1 mm)' },
-    { name: 'base', type: 'int', initial: 2, caption: 'Base Thickness?' },
-    { name: 'emboss', type: 'int', initial: 2, caption: 'Embossing Thickness?' },
-    { name: 'ring', type: 'group', caption: 'Ring' },
-    { name: 'len', type: 'int', initial: 24, caption: 'Length?' },
-    { name: 'dia', type: 'int', initial: 20, caption: 'Center Diameter?' },
-    { name: 'thick', type: 'float', initial: 2.3, caption: 'Outer Walls?' },
-    { name: 'other', type: 'group', caption: 'Others' },
-    { name: 'resolution', type: 'int', initial: 36, caption: 'Resolution:' },
-    { name: 'color', type: 'choice', initial: '035/141/053/255', caption: 'Color?', values: ['016/169/240/255', '019/040/177/255', '165/190/215/255', '242/243/242/255', '190/170/235/255', '243/110/202/255', '252/088/166/255', '248/060/033/255', '253/102/054/255', '255/180/050/255', '240/202/029/255', '252/230/037/255', '190/212/003/255', '166/246/029/255', '035/141/053/255', '032/163/145/255', '245/030/015/230', '255/160/000/220', '250/210/000/220', '060/145/040/230', '195/000/070/230', '236/228/212/255', '215/200/164/255', '183/180/140/255', '132/134/096/255', '042/041/038/255', '255/255/255/250', '184/185/189/255', '080/049/039/255', '190/133/085/255'], captions: ['Sky Blue', 'Ultra Marine Blue', 'Blue Grey', 'Bluish White', 'Lila', 'Magenta', 'Flourescent Pink', 'Traffic Red', 'Warm Red', 'Dutch Orange', 'Olympic Gold', 'Signal Yellow', 'Flourescent Green', 'Intense Green', 'Leaf Green', 'Mint Turquoise', 'Red Transparent', 'Orange Transparent', 'Yellow Transparent', 'Green Transparent', 'Violet Transparent', 'Naturel', 'Pale Gold', 'Greenish Beige', 'Olive Green', 'Standard Black', 'Standard White', 'Shining Silver', 'Chocolate Brown', 'Light Brown'] }
-  ]
-}
+const getParameterDefinitions = () => [
+  { name: 'emblem', type: 'group', caption: 'Emblem (1 unit = 1 mm)' },
+  { name: 'base', type: 'int', initial: 2, caption: 'Base Thickness?' },
+  { name: 'emboss', type: 'int', initial: 2, caption: 'Embossing Thickness?' },
+  { name: 'ring', type: 'group', caption: 'Ring' },
+  { name: 'len', type: 'int', initial: 24, caption: 'Length?' },
+  { name: 'dia', type: 'int', initial: 20, caption: 'Center Diameter?' },
+  { name: 'thick', type: 'float', initial: 2.3, caption: 'Outer Walls?' },
+  { name: 'other', type: 'group', caption: 'Others' },
+  { name: 'resolution', type: 'int', initial: 36, caption: 'Resolution:' },
+  { name: 'color', type: 'choice', initial: '035/141/053/255', caption: 'Color?', values: ['016/169/240/255', '019/040/177/255', '165/190/215/255', '242/243/242/255', '190/170/235/255', '243/110/202/255', '252/088/166/255', '248/060/033/255', '253/102/054/255', '255/180/050/255', '240/202/029/255', '252/230/037/255', '190/212/003/255', '166/246/029/255', '035/141/053/255', '032/163/145/255', '245/030/015/230', '255/160/000/220', '250/210/000/220', '060/145/040/230', '195/000/070/230', '236/228/212/255', '215/200/164/255', '183/180/140/255', '132/134/096/255', '042/041/038/255', '255/255/255/250', '184/185/189/255', '080/049/039/255', '190/133/085/255'], captions: ['Sky Blue', 'Ultra Marine Blue', 'Blue Grey', 'Bluish White', 'Lila', 'Magenta', 'Flourescent Pink', 'Traffic Red', 'Warm Red', 'Dutch Orange', 'Olympic Gold', 'Signal Yellow', 'Flourescent Green', 'Intense Green', 'Leaf Green', 'Mint Turquoise', 'Red Transparent', 'Orange Transparent', 'Yellow Transparent', 'Green Transparent', 'Violet Transparent', 'Naturel', 'Pale Gold', 'Greenish Beige', 'Olive Green', 'Standard Black', 'Standard White', 'Shining Silver', 'Chocolate Brown', 'Light Brown'] }
+]
 
-function createRing (p) {
+const createRing = (p) => {
   // create the ring
   const xr = p.len / 2
   const yr = (p.dia + (p.thick * 2)) / 2
-  const rr = (p.thick / 2) - 0.1
   const outer = CSG.cylinder({ start: [-xr, 0, 0], end: [xr, 0, 0], radius: yr, resolution: p.resolution })
   const yi = p.dia / 2
   const inner = CSG.cylinder({ start: [-xr, 0, 0], end: [xr, 0, 0], radius: yi, resolution: p.resolution })
@@ -778,8 +775,8 @@ function createRing (p) {
   return ring
 }
 
-function centerIt (object) {
-  bounds = object.getBounds()
+const centerIt = (object) => {
+  const bounds = object.getBounds()
   let x = bounds[0]._x + ((bounds[1]._x - bounds[0]._x) / 2)
   let y = bounds[0]._y + ((bounds[1]._y - bounds[0]._y) / 2)
   x = 0 - x
@@ -787,7 +784,7 @@ function centerIt (object) {
   return object.translate([x, y, 0])
 }
 
-function main (p) {
+const main = (p) => {
 // create the base
   let base = logoOutline()
   base = base.extrude({ offset: [0, 0, p.base] })

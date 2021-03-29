@@ -1,32 +1,30 @@
-const getParameterDefinitions = () => {
-  return [
-    { name: 'case', type: 'group', caption: 'Case' },
-    { name: 'thickness', type: 'float', initial: 1.0, caption: 'Thickness (mm)?', step: 0.1, min: 1.0, max: 10.0 },
-    { name: 'offset', type: 'float', initial: 0.2, caption: 'Fit (mm)?', step: 0.1, min: 0.0, max: 12.0 },
-    { name: 'style', type: 'choice', initial: 'clip', caption: 'Style?', values: ['clip', 'exposed', 'ends', 'full'], captions: ['Clip On', 'Exposed Sides', 'Exposed Ends', 'Full Armor'] },
-    { name: 'access', type: 'group', caption: 'iPhone Access' },
-    { name: 'showscreen', type: 'checkbox', checked: false, caption: 'Touch Screen?' },
-    { name: 'showhome', type: 'checkbox', checked: false, caption: 'Home Button?' },
-    { name: 'showringsilent', type: 'checkbox', checked: true, caption: 'Ring/Silent Switch?' },
-    { name: 'showvolume', type: 'checkbox', checked: true, caption: 'Volume Switches?' },
-    { name: 'showpower', type: 'checkbox', checked: true, caption: 'Power Switch?' },
-    { name: 'showheadphone', type: 'checkbox', checked: true, caption: 'Headphone?' },
-    { name: 'showsim', type: 'checkbox', checked: false, caption: 'Sim Slot?' },
-    { name: 'showpowerjack', type: 'checkbox', checked: true, caption: 'Power Port?' },
-    { name: 'showspeaker', type: 'checkbox', checked: true, caption: 'Bottom Speakers?' },
-    { name: 'showcameraport', type: 'checkbox', checked: true, caption: 'Back Camera Port?' },
-    { name: 'others', type: 'group', caption: 'Others' },
-    { name: 'color', type: 'choice', initial: '253/102/054/255', caption: 'Color?', values: ['016/169/240/255', '019/040/177/255', '165/190/215/255', '242/243/242/255', '190/170/235/255', '243/110/202/255', '252/088/166/255', '248/060/033/255', '253/102/054/255', '255/180/050/255', '240/202/029/255', '252/230/037/255', '190/212/003/255', '166/246/029/255', '035/141/053/255', '032/163/145/255', '245/030/015/230', '255/160/000/220', '250/210/000/220', '060/145/040/230', '195/000/070/230', '236/228/212/255', '215/200/164/255', '183/180/140/255', '132/134/096/255', '042/041/038/255', '255/255/255/250', '184/185/189/255', '080/049/039/255', '190/133/085/255'], captions: ['Sky Blue', 'Ultra Marine Blue', 'Blue Grey', 'Bluish White', 'Lila', 'Magenta', 'Flourescent Pink', 'Traffic Red', 'Warm Red', 'Dutch Orange', 'Olympic Gold', 'Signal Yellow', 'Flourescent Green', 'Intense Green', 'Leaf Green', 'Mint Turquoise', 'Red Transparent', 'Orange Transparent', 'Yellow Transparent', 'Green Transparent', 'Violet Transparent', 'Naturel', 'Pale Gold', 'Greenish Beige', 'Olive Green', 'Standard Black', 'Standard White', 'Shining Silver', 'Chocolate Brown', 'Light Brown'] },
-    { name: 'resolution', type: 'int', initial: 18, caption: 'Resolution?' }
-  ]
-}
+const getParameterDefinitions = () => [
+  { name: 'case', type: 'group', caption: 'Case' },
+  { name: 'thickness', type: 'float', initial: 1.0, caption: 'Thickness (mm)?', step: 0.1, min: 1.0, max: 10.0 },
+  { name: 'offset', type: 'float', initial: 0.2, caption: 'Fit (mm)?', step: 0.1, min: 0.0, max: 12.0 },
+  { name: 'style', type: 'choice', initial: 'clip', caption: 'Style?', values: ['clip', 'exposed', 'ends', 'full'], captions: ['Clip On', 'Exposed Sides', 'Exposed Ends', 'Full Armor'] },
+  { name: 'access', type: 'group', caption: 'iPhone Access' },
+  { name: 'showscreen', type: 'checkbox', checked: false, caption: 'Touch Screen?' },
+  { name: 'showhome', type: 'checkbox', checked: false, caption: 'Home Button?' },
+  { name: 'showringsilent', type: 'checkbox', checked: true, caption: 'Ring/Silent Switch?' },
+  { name: 'showvolume', type: 'checkbox', checked: true, caption: 'Volume Switches?' },
+  { name: 'showpower', type: 'checkbox', checked: true, caption: 'Power Switch?' },
+  { name: 'showheadphone', type: 'checkbox', checked: true, caption: 'Headphone?' },
+  { name: 'showsim', type: 'checkbox', checked: false, caption: 'Sim Slot?' },
+  { name: 'showpowerjack', type: 'checkbox', checked: true, caption: 'Power Port?' },
+  { name: 'showspeaker', type: 'checkbox', checked: true, caption: 'Bottom Speakers?' },
+  { name: 'showcameraport', type: 'checkbox', checked: true, caption: 'Back Camera Port?' },
+  { name: 'others', type: 'group', caption: 'Others' },
+  { name: 'color', type: 'choice', initial: '253/102/054/255', caption: 'Color?', values: ['016/169/240/255', '019/040/177/255', '165/190/215/255', '242/243/242/255', '190/170/235/255', '243/110/202/255', '252/088/166/255', '248/060/033/255', '253/102/054/255', '255/180/050/255', '240/202/029/255', '252/230/037/255', '190/212/003/255', '166/246/029/255', '035/141/053/255', '032/163/145/255', '245/030/015/230', '255/160/000/220', '250/210/000/220', '060/145/040/230', '195/000/070/230', '236/228/212/255', '215/200/164/255', '183/180/140/255', '132/134/096/255', '042/041/038/255', '255/255/255/250', '184/185/189/255', '080/049/039/255', '190/133/085/255'], captions: ['Sky Blue', 'Ultra Marine Blue', 'Blue Grey', 'Bluish White', 'Lila', 'Magenta', 'Flourescent Pink', 'Traffic Red', 'Warm Red', 'Dutch Orange', 'Olympic Gold', 'Signal Yellow', 'Flourescent Green', 'Intense Green', 'Leaf Green', 'Mint Turquoise', 'Red Transparent', 'Orange Transparent', 'Yellow Transparent', 'Green Transparent', 'Violet Transparent', 'Naturel', 'Pale Gold', 'Greenish Beige', 'Olive Green', 'Standard Black', 'Standard White', 'Shining Silver', 'Chocolate Brown', 'Light Brown'] },
+  { name: 'resolution', type: 'int', initial: 18, caption: 'Resolution?' }
+]
 
 const use = (url) => {
   const xmlhttp = new XMLHttpRequest()
   let obj = null
   xmlhttp.onreadystatechange = (e) => {
-    if (xmlhttp.readyState == 4) {
-      if (xmlhttp.status == 200) {
+    if (xmlhttp.readyState === 4) {
+      if (xmlhttp.status === 200) {
         obj = JSON.parse(xmlhttp.responseText)
       }
     }
@@ -137,14 +135,12 @@ const makeDisplay = (p) => {
 }
 
 const makeHomeButton = (p) => {
-  let x, y, z
-  let rx, ry, rz, rr
-  z = p.iphone4.d
-  rr = p.iphone4.hb_rr
+  let z = p.iphone4.d
+  let rr = p.iphone4.hb_rr
   rr = rr + 0.50 // extra space for access
   let hb = CSG.cylinder({ start: [0, 0, 0], end: [0, 0, z], radius: rr, resolution: p.resolution })
-  x = p.iphone4.hb_xoff
-  y = (-p.iphone4.rh) + p.iphone4.hb_yoff
+  const x = p.iphone4.hb_xoff
+  const y = (-p.iphone4.rh) + p.iphone4.hb_yoff
   z = 0
   hb = hb.translate([x, y, z])
   return hb
@@ -167,15 +163,13 @@ const makeRingSilent = (p) => {
 }
 
 const makeVolumeButtons = (p) => {
-  let x, y, z
-  let rx, ry, rz, rr
-  rr = p.iphone4.vb_rr
+  let rr = p.iphone4.vb_rr
   rr = rr + 1.50 // extra space for access
-  z = p.thickness + p.offset
+  let z = p.thickness + p.offset
   let vb = CSG.cylinder({ start: [0, 0, -z], end: [0, 0, z], radius: rr, resolution: p.resolution })
   vb = vb.rotateY(-90) // flip to side
-  x = (-p.iphone4.rw) - z
-  y = p.iphone4.vb_xoff1
+  const x = (-p.iphone4.rw) - z
+  let y = p.iphone4.vb_xoff1
   z = p.iphone4.vb_yoff
   const vb1 = vb.translate([x, y, z])
   y = p.iphone4.vb_xoff2
@@ -185,87 +179,77 @@ const makeVolumeButtons = (p) => {
 }
 
 const makePower = (p) => {
-  let x, y, z
-  let rx, ry, rz, rr
-  rx = p.iphone4.pb_rw
+  let rx = p.iphone4.pb_rw
   rx = rx + 1.50 // extra space for access
-  ry = p.iphone4.pb_rh
+  let ry = p.iphone4.pb_rh
   ry = ry + 1.50 // extra space for access
-  rr = ry * 0.90
+  const rr = ry * 0.90
   let pb = CAG.roundedRectangle({ center: [0, 0], radius: [rx, ry], roundradius: rr, resolution: p.resolution })
-  z = p.thickness + p.offset
+  let z = p.thickness + p.offset
   pb = pb.extrude({ offset: [0, 0, z * 2] }).rotateX(90) // flip to side
-  x = p.iphone4.pb_xoff
-  y = p.iphone4.rh + z
+  const x = p.iphone4.pb_xoff
+  const y = p.iphone4.rh + z
   z = p.iphone4.pb_yoff
   pb = pb.translate([x, y, z])
   return pb
 }
 
 const makeHeadPhone = (p) => {
-  let x, y, z
-  let rx, ry, rz, rr
-  z = p.thickness + p.offset
-  rr = p.iphone4.ej_rr
+  let z = p.thickness + p.offset
+  let rr = p.iphone4.ej_rr
   rr = rr + 0.50 // extra space for access
   let ej = CSG.cylinder({ start: [0, 0, -z], end: [0, 0, z], radius: rr, resolution: p.resolution })
   ej = ej.rotateX(90) // flip to side
-  x = p.iphone4.ej_xoff
-  y = p.iphone4.rh + z
+  const x = p.iphone4.ej_xoff
+  const y = p.iphone4.rh + z
   z = p.iphone4.ej_yoff
   ej = ej.translate([x, y, z])
   return ej
 }
 
 const makeSimSlot = (p) => {
-  let x, y, z
-  let rx, ry, rz, rr
-  rx = p.iphone4.sm_rw
+  let rx = p.iphone4.sm_rw
   rx = rx + 0.50 // extra space for access
-  ry = p.iphone4.sm_rh
+  let ry = p.iphone4.sm_rh
   ry = ry + 0.50 // extra space for access
-  rr = ry * 0.90
+  const rr = ry * 0.90
   let sm = CAG.roundedRectangle({ center: [0, 0], radius: [rx, ry], roundradius: rr, resolution: p.resolution })
-  z = p.thickness + p.offset
+  let z = p.thickness + p.offset
   sm = sm.extrude({ offset: [0, 0, z * 2] }).rotateZ(-90).rotateY(90) // flip to side
-  x = (p.iphone4.rw) - z
-  y = p.iphone4.sm_xoff
+  const x = (p.iphone4.rw) - z
+  const y = p.iphone4.sm_xoff
   z = p.iphone4.sm_yoff
   sm = sm.translate([x, y, z])
   return sm
 }
 
 const makePowerJack = (p) => {
-  let x, y, z
-  let rx, ry, rz, rr
-  rx = p.iphone4.pj_rw
+  let rx = p.iphone4.pj_rw
   rx = rx + 0.50 // extra space for access
-  ry = p.iphone4.pj_rh
+  let ry = p.iphone4.pj_rh
   ry = ry + 0.50 // extra space for access
-  rr = 0.5
+  const rr = 0.5
   let pj = CAG.roundedRectangle({ center: [0, 0], radius: [rx, ry], roundradius: rr, resolution: p.resolution })
-  z = p.thickness + p.offset
+  let z = p.thickness + p.offset
   pj = pj.extrude({ offset: [0, 0, z * 2] }).rotateX(-90) // flip to side
-  x = p.iphone4.pj_xoff
-  y = (-p.iphone4.rh) - z
+  const x = p.iphone4.pj_xoff
+  const y = (-p.iphone4.rh) - z
   z = p.iphone4.pj_yoff
   pj = pj.translate([x, y, z])
   return pj
 }
 
 const makeSpeakers = (p) => {
-  let x, y, z
-  let rx, ry, rz, rr
-  rx = p.iphone4.sp_rw
+  let rx = p.iphone4.sp_rw
   rx = rx + 0.50 // extra space for access
-  ry = p.iphone4.sp_rh
+  let ry = p.iphone4.sp_rh
   ry = ry + 0.50 // extra space for access
-  rr = ry * 0.90
+  const rr = ry * 0.90
   let sp = CAG.roundedRectangle({ center: [0, 0], radius: [rx, ry], roundradius: rr, resolution: p.resolution })
-  z = p.thickness + p.offset
+  let z = p.thickness + p.offset
   sp = sp.extrude({ offset: [0, 0, z] }).rotateX(-90) // flip to side
-  x = p.iphone4.sp_xoff
-  y = (-p.iphone4.rh) - z
+  let x = p.iphone4.sp_xoff
+  const y = (-p.iphone4.rh) - z
   z = p.iphone4.sp_yoff
   const sp1 = sp.translate([x, y, z])
   x = -p.iphone4.sp_xoff
@@ -275,14 +259,11 @@ const makeSpeakers = (p) => {
 }
 
 const makeCameraPort = (p) => {
-  let x, y, z
-  let rx, ry, rz, rr
-
-  rr = p.iphone4.bc_rr
+  let rr = p.iphone4.bc_rr
   rr = rr + 1.00 // extra space for access
   let bc = CAG.circle({ radius: rr, resolution: p.resolution })
-  x = p.iphone4.bc_xoff
-  y = p.iphone4.rh + p.iphone4.bc_yoff
+  let x = p.iphone4.bc_xoff
+  let y = p.iphone4.rh + p.iphone4.bc_yoff
   bc = bc.translate([x, y])
 
   rr = p.iphone4.bs_rr
@@ -293,7 +274,7 @@ const makeCameraPort = (p) => {
   bs = bs.translate([x, y])
 
   bc = hull(bc, bs)
-  z = p.thickness + p.offset
+  let z = p.thickness + p.offset
   bc = bc.extrude({ offset: [0, 0, z] })
   z = -p.iphone4.rd2 - z
   bc = bc.translate([0, 0, z])
@@ -318,7 +299,7 @@ const makeFitSlots = (p) => {
   c2 = c1.translate([-(y * 4), -(p.offset / 2)])
   c = c.subtract(c2)
   c = c.extrude({ offset: [0, 0, x * 2] }).translate([0, 0, -x]).rotateZ(90).rotateY(90)// .translate([0,y,0]);
-  b = c.rotateZ(p.fit_angle)
+  let b = c.rotateZ(p.fit_angle)
   y = (p.iphone4.rh) - x / 2
   z = 0
   b = b.translate([x / 2, y, z])
@@ -337,27 +318,25 @@ const main = (p) => {
   let iphone = CSG.cube()
   iphone = iphone.fromJSON(s)// .setColor([0,0,0]);
   iphone4(p)
+
   // create the case around the iphone
-  let xs, ys, zs
-
   const ibounds = iphone.getBounds()
-  const iphone_w = ibounds[1]._x - ibounds[0]._x
-  const iphone_h = ibounds[1]._y - ibounds[0]._y
-  const iphone_d = ibounds[1]._z - ibounds[0]._z
+  const iphonew = ibounds[1]._x - ibounds[0]._x
+  const iphoneh = ibounds[1]._y - ibounds[0]._y
+  const iphoned = ibounds[1]._z - ibounds[0]._z
 
-  let x, y, z, rr
-  x = p.iphone4.rw + (p.offset + p.thickness)
-  y = p.iphone4.rh + (p.offset + p.thickness)
-  z = p.iphone4.rd2 + (p.offset + p.thickness) // use full depth
-  rr = p.iphone4.rr + (p.offset + p.thickness)
+  const x = p.iphone4.rw + (p.offset + p.thickness)
+  const y = p.iphone4.rh + (p.offset + p.thickness)
+  const z = p.iphone4.rd2 + (p.offset + p.thickness) // use full depth
+  const rr = p.iphone4.rr + (p.offset + p.thickness)
 
   let c = CAG.roundedRectangle({ center: [0, 0], radius: [x, y], roundradius: rr, resolution: p.resolution })
   c = c.extrude({ offset: [0, 0, z * 2] }).translate([0, 0, -z])
 
   // scale the iPhone to obtain the inside of the case (negative)
-  xs = ((iphone_w / 2) + p.offset) / (iphone_w / 2)
-  ys = ((iphone_h / 2) + p.offset) / (iphone_h / 2)
-  zs = ((iphone_d / 2) + p.offset) / (iphone_d / 2)
+  const xs = ((iphonew / 2) + p.offset) / (iphonew / 2)
+  const ys = ((iphoneh / 2) + p.offset) / (iphoneh / 2)
+  const zs = ((iphoned / 2) + p.offset) / (iphoned / 2)
   const ci = iphone.scale([xs, ys, zs]).setColor([1, 1, 1])
 
   c = c.subtract(ci)// .setColor([0,0,0]);
@@ -404,7 +383,7 @@ const main = (p) => {
     c = c.subtract(n)
   }
   // apply the style
-  if (p.style == 'clip') {
+  if (p.style === 'clip') {
     const sl = CSG.cube({ center: [0, 0, 50 + p.iphone4.rd2], radius: [200, 200, 50] })
     c = c.subtract(sl)
 

@@ -1,5 +1,5 @@
 /*
-function getParameterDefinitions() {
+const getParameterDefinitions = () => {
   return [
     { name:     'n_splines',
       type:     'int',
@@ -53,7 +53,7 @@ function getParameterDefinitions() {
 }
 */
 
-function main (params) {
+const main = (params) => {
   const p = {}
 
   p.resolution = 72
@@ -65,9 +65,9 @@ function main (params) {
   p.spline_width = params.spline_width / 2
   p.spline_depth = params.spline_depth
   p.min_drive_socket_depth = 15
-  p_drive_socket_hole_tolerance = 0.15 // empirical?
-  p_drive_socket_hole_size = (parseFloat(params.drive_size) +
-                                   p_drive_socket_hole_tolerance) / 2
+  p.drive_socket_hole_tolerance = 0.15 // empirical?
+  p.drive_socket_hole_size = (parseFloat(params.drive_size) +
+                                   p.drive_socket_hole_tolerance) / 2
   p.drive_socket_depth = p.adapter_length - p.spline_depth
 
   // sanity check model parameters
@@ -79,13 +79,13 @@ function main (params) {
 
   // create the splines
   let splines, chamfers
-  const chamfer_depth = 2 // must be > 1
-  const outer_circle = CAG.circle({
+  const chamferDepth = 2 // must be > 1
+  const outerCircle = CAG.circle({
     center: [0, 0],
     radius: p.spline_outer_radius,
     resolution: p.resolution
   })
-  for (n = 0; n < params.n_splines; n++) {
+  for (let n = 0; n < params.n_splines; n++) {
     let s = CAG.rectangle({
       center: [0, -p.spline_outer_radius / 2],
       radius: [p.spline_width, p.spline_outer_radius / 2],
@@ -93,50 +93,50 @@ function main (params) {
     })
     const angle = n * (360.0 / params.n_splines)
     s = s.rotateZ(angle)
-    if (params.tooth_profile == 'curved') {
+    if (params.tooth_profile === 'curved') {
       // change spline teeth from square profile to circular
-      s = outer_circle.intersect(s)
+      s = outerCircle.intersect(s)
     }
 
     const x = s.getOutlinePaths()[0].points
     const y = CSG.Polygon.createFromPoints(x)
-    const spline_lobe = s.extrude({ offset: [0, 0, p.spline_depth] })
-    const chamfer_lobe = y.solidFromSlices({
-      numslices: chamfer_depth,
+    const splineLobe = s.extrude({ offset: [0, 0, p.spline_depth] })
+    const chamferLobe = y.solidFromSlices({
+      numslices: chamferDepth,
       callback: function (t, sliceno) {
-        // echo("in callback chamfer_lobe");
+        // echo("in callback chamferLobe");
         // echo("t=["+t+"]");
         // echo("sliceno=["+sliceno+"]");
         const coef = 1 - t
         // echo("coef=["+coef+"]");
-        const h = t * chamfer_depth
+        const h = t * chamferDepth
         // echo("h=["+h+"]");
         return this.scale([1 + coef / 10, 1 + coef / 10, 1]).translate([0, 0, h])
       }
     })
-    splines = splines ? splines.union(spline_lobe) : spline_lobe
-    chamfers = chamfers ? chamfers.union(chamfer_lobe) : chamfer_lobe
+    splines = splines ? splines.union(splineLobe) : splineLobe
+    chamfers = chamfers ? chamfers.union(chamferLobe) : chamferLobe
   }
   // return splines.union(chamfers);
 
   // create the spline shaft
-  let spline_shaft = CAG.circle({
+  let splineShaft = CAG.circle({
     center: [0, 0],
     radius: p.spline_inner_radius,
     resolution: p.resolution
   })
-  spline_shaft = spline_shaft.extrude({ offset: [0, 0, p.spline_depth] })
-  spline_shaft = spline_shaft.union([splines, chamfers])
-  // return spline_shaft;
+  splineShaft = splineShaft.extrude({ offset: [0, 0, p.spline_depth] })
+  splineShaft = splineShaft.union([splines, chamfers])
+  // return splineShaft;
 
   // create the drive shaft
-  let drive_shaft = CAG.rectangle({
+  let driveShaft = CAG.rectangle({
     center: [0, 0],
-    radius: [p_drive_socket_hole_size, p_drive_socket_hole_size],
+    radius: [p.drive_socket_hole_size, p.drive_socket_hole_size],
     resolution: p.resolution
   })
-  drive_shaft = drive_shaft.extrude({ offset: [0, 0, p.drive_socket_depth] })
-  drive_shaft = drive_shaft.translate([0, 0, p.adapter_length - p.drive_socket_depth])
+  driveShaft = driveShaft.extrude({ offset: [0, 0, p.drive_socket_depth] })
+  driveShaft = driveShaft.translate([0, 0, p.adapter_length - p.drive_socket_depth])
 
   // assemble the adapter piece
   let adapter = CAG.circle({
@@ -145,8 +145,8 @@ function main (params) {
     resolution: p.resolution
   })
   adapter = adapter.extrude({ offset: [0, 0, p.adapter_length] })
-  adapter = adapter.subtract(spline_shaft)
-  adapter = adapter.subtract(drive_shaft)
+  adapter = adapter.subtract(splineShaft)
+  adapter = adapter.subtract(driveShaft)
   adapter = adapter.translate([0, 0, -p.spline_depth])
 
   return adapter

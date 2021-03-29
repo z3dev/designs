@@ -3,9 +3,7 @@
 // date: Sat Apr 23 2016 11:47:13 GMT+0900 (JST)
 // source: data.svg
 //
-function createBase (p) {
-  const cag0 = new CAG()
-  const cag1 = new CAG()
+const createBase = (p) => {
   let cag10 = new CAG()
   let cag101 = new CSG.Path2D([[58.333333333333336, -16.788359788359788]], false)
   cag101 = cag101.appendBezier([[56.732804232804234, -16.735449735449734], [55.18518518518518, -16.751322751322753], [54.8941798941799, -16.82010582010582]])
@@ -150,11 +148,12 @@ function createBase (p) {
   cag10 = cag10.union(cag101)
   return cag10
 }
-function createEmbossing (p) {
+
+const createEmbossing = (p) => {
   let cag0 = new CAG()
   let cag1 = new CAG()
   let cag11 = new CAG()
-  var cag111 = new CSG.Path2D([[58.5978835978836, -17.626984126984127]], false)
+  let cag111 = new CSG.Path2D([[58.5978835978836, -17.626984126984127]], false)
   cag111 = cag111.appendBezier([[59.61640211640212, -17.693121693121693], [61.10582010582011, -17.933862433862437], [61.904761904761905, -18.161375661375665]])
   cag111 = cag111.appendBezier([[62.70634920634921, -18.388888888888893], [64.01587301587301, -18.904761904761905], [64.81481481481482, -19.30687830687831]])
   cag111 = cag111.appendBezier([[65.61640211640211, -19.70899470899471], [67.22222222222223, -20.793650793650794], [68.3862433862434, -21.71693121693122]])
@@ -208,7 +207,7 @@ function createEmbossing (p) {
   cag11 = cag11.union(cag111)
   cag1 = cag1.union(cag11)
   let cag12 = new CAG()
-  var cag121 = new CSG.Path2D([[58.730158730158735, -20.52116402116402]], false)
+  let cag121 = new CSG.Path2D([[58.730158730158735, -20.52116402116402]], false)
   cag121 = cag121.appendBezier([[59.53174603174603, -20.582010582010582], [60.84126984126984, -20.841269841269842], [61.640211640211646, -21.095238095238095]])
   cag121 = cag121.appendBezier([[62.44179894179894, -21.35185185185185], [63.80952380952381, -21.962962962962962], [64.68253968253968, -22.455026455026456]])
   cag121 = cag121.appendBezier([[65.59788359788361, -22.97089947089947], [67.41269841269842, -24.481481481481485], [68.97354497354499, -26.026455026455025]])
@@ -273,7 +272,7 @@ function createEmbossing (p) {
   cag131 = cag131.innerToCAG() // star right
   cag13 = cag13.union(cag131)
   cag1 = cag1.subtract(cag13)
-  if (p.type == '1') {
+  if (p.type === '1') {
     let cag14 = new CAG()
     let cag141 = new CSG.Path2D([[55.489417989417994, -27.251322751322753]], false)
     cag141 = cag141.appendBezier([[55.5978835978836, -27.253968253968253], [55.949735449735456, -28.116402116402117], [56.26719576719577, -29.16931216931217]])
@@ -464,7 +463,7 @@ function createEmbossing (p) {
   cag1101 = cag1101.innerToCAG()
   cag110 = cag110.union(cag1101)
   cag1 = cag1.union(cag110)
-  var cag111 = new CAG()
+  cag111 = new CAG()
   let cag1111 = new CSG.Path2D([[66.13756613756614, -44.449735449735456]], false)
   cag1111 = cag1111.appendBezier([[66.21164021164022, -44.44444444444445], [66.6878306878307, -44.785714285714285], [67.1957671957672, -45.20634920634921]])
   cag1111 = cag1111.appendBezier([[67.70634920634922, -45.62698412698413], [68.83597883597884, -46.18518518518519], [69.70899470899471, -46.44444444444445]])
@@ -523,7 +522,7 @@ function createEmbossing (p) {
   cag1111 = cag1111.close()
   cag1111 = cag1111.innerToCAG() // flower
   cag111 = cag111.union(cag1111)
-  if (p.type == '1') {
+  if (p.type === '1') {
     cag1 = cag1.union(cag111)
   }
   let cag112 = new CAG()
@@ -582,10 +581,10 @@ function createEmbossing (p) {
   cag1121 = cag1121.close()
   cag1121 = cag1121.innerToCAG()
   cag112 = cag112.union(cag1121)
-  if (p.type == '1') {
+  if (p.type === '1') {
     cag1 = cag1.subtract(cag112)
   }
-  if (p.type == '2') {
+  if (p.type === '2') {
     cag1 = cag1.union(cag112)
   }
   let cag113 = new CAG()
@@ -646,7 +645,7 @@ function createEmbossing (p) {
   cag1131 = cag1131.close()
   cag1131 = cag1131.innerToCAG()
   cag113 = cag113.union(cag1131)
-  if (p.type == '1') {
+  if (p.type === '1') {
     cag1 = cag1.union(cag113)
   }
   let cag114 = new CAG()
@@ -886,7 +885,7 @@ function createEmbossing (p) {
   cag1201 = cag1201.innerToCAG()
   cag120 = cag120.union(cag1201)
   cag1 = cag1.union(cag120)
-  var cag121 = new CAG()
+  cag121 = new CAG()
   let cag1211 = new CSG.Path2D([[54.62962962962963, -82.53703703703704]], false)
   cag1211 = cag1211.appendBezier([[54.62962962962963, -82.54232804232804], [55.105820105820115, -82.71957671957672], [55.68783068783069, -82.92857142857144]])
   cag1211 = cag1211.appendBezier([[56.26984126984127, -83.13756613756614], [57.1931216931217, -83.31481481481482], [57.73809523809524, -83.32275132275132]])
@@ -952,7 +951,7 @@ function createEmbossing (p) {
   cag1221 = cag1221.innerToCAG() // star left
   cag122 = cag122.union(cag1221)
   cag1 = cag1.subtract(cag122)
-  if (p.type == '1') {
+  if (p.type === '1') {
     let cag123 = new CAG()
     let cag1231 = new CSG.Path2D([[55.592592592592595, -94.51058201058201]], false)
     cag1231 = cag1231.appendBezier([[55.75925925925927, -94.54761904761905], [56.17460317460318, -95.41005291005291], [56.51322751322752, -96.42857142857143]])
@@ -1023,7 +1022,7 @@ function createEmbossing (p) {
 }
 
 // Return the center of the flower
-function getCenter () {
+const getCenter = () => {
   let cag1111 = new CSG.Path2D([[66.13756613756614, -44.449735449735456]], false)
   cag1111 = cag1111.appendBezier([[66.21164021164022, -44.44444444444445], [66.6878306878307, -44.785714285714285], [67.1957671957672, -45.20634920634921]])
   cag1111 = cag1111.appendBezier([[67.70634920634922, -45.62698412698413], [68.83597883597884, -46.18518518518519], [69.70899470899471, -46.44444444444445]])
@@ -1082,34 +1081,30 @@ function getCenter () {
   cag1111 = cag1111.close()
   cag1111 = cag1111.innerToCAG()
 
-  bounds = cag1111.getBounds()
+  const bounds = cag1111.getBounds()
   const x = bounds[0]._x + ((bounds[1]._x - bounds[0]._x) / 2)
   const y = bounds[0]._y + ((bounds[1]._y - bounds[0]._y) / 2)
 
   return { x: x, y: y }
 }
 
-function getEmblem (p) {
+const getEmblem = (p) => {
   let base = createBase(p)
-  if (p.type == '1' || p.type == '2') {
+  if (p.type === '1' || p.type === '2') {
     const embossing = createEmbossing(p)
     base = base.subtract(embossing)
   }
   // center the results
   const center = getCenter()
-  x = 0 - center.x
-  y = 0 - center.y
+  const x = 0 - center.x
+  const y = 0 - center.y
   base = base.translate([x, y, 0])
 
   return base
 }
 
-function getParameterDefinitions () {
-  return [
-    { name: 'type', type: 'choice', initial: '1', caption: 'Type?', values: ['0', '1', '2'], captions: ['Base Only', 'Full Emblem', 'Simple Emblem'] }
-  ]
-}
+const getParameterDefinitions = () => [
+  { name: 'type', type: 'choice', initial: '1', caption: 'Type?', values: ['0', '1', '2'], captions: ['Base Only', 'Full Emblem', 'Simple Emblem'] }
+]
 
-function main (p) {
-  return getEmblem(p)
-}
+const main = (p) => getEmblem(p)

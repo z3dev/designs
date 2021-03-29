@@ -1,28 +1,26 @@
-function getParameterDefinitions () {
-  return [
-    { name: 'iphone', type: 'group', caption: 'iPhone 5S' },
-    { name: 'color', type: 'choice', initial: '042/041/038/255', caption: 'Color?', values: ['016/169/240/255', '019/040/177/255', '165/190/215/255', '242/243/242/255', '190/170/235/255', '243/110/202/255', '252/088/166/255', '248/060/033/255', '253/102/054/255', '255/180/050/255', '240/202/029/255', '252/230/037/255', '190/212/003/255', '166/246/029/255', '035/141/053/255', '032/163/145/255', '245/030/015/230', '255/160/000/220', '250/210/000/220', '060/145/040/230', '195/000/070/230', '236/228/212/255', '215/200/164/255', '183/180/140/255', '132/134/096/255', '042/041/038/255', '255/255/255/250', '184/185/189/255', '080/049/039/255', '190/133/085/255'], captions: ['Sky Blue', 'Ultra Marine Blue', 'Blue Grey', 'Bluish White', 'Lila', 'Magenta', 'Flourescent Pink', 'Traffic Red', 'Warm Red', 'Dutch Orange', 'Olympic Gold', 'Signal Yellow', 'Flourescent Green', 'Intense Green', 'Leaf Green', 'Mint Turquoise', 'Red Transparent', 'Orange Transparent', 'Yellow Transparent', 'Green Transparent', 'Violet Transparent', 'Naturel', 'Pale Gold', 'Greenish Beige', 'Olive Green', 'Standard Black', 'Standard White', 'Shining Silver', 'Chocolate Brown', 'Light Brown'] },
-    { name: 'rendering', type: 'group', caption: 'Render' },
-    { name: 'showscreen', type: 'checkbox', checked: true, caption: 'Touch Screen?' },
-    { name: 'showhome', type: 'checkbox', checked: true, caption: 'Home Buttom?' },
-    { name: 'showfrontcam', type: 'checkbox', checked: true, caption: 'Front Camera?' },
-    { name: 'showfrontspk', type: 'checkbox', checked: true, caption: 'Front Speaker?' },
-    { name: 'showringsilent', type: 'checkbox', checked: true, caption: 'Ring/Silent Switch?' },
-    { name: 'showvolume', type: 'checkbox', checked: true, caption: 'Volume Switches?' },
-    { name: 'showpower', type: 'checkbox', checked: true, caption: 'Power Switch?' },
-    { name: 'showsim', type: 'checkbox', checked: true, caption: 'Sim Slot?' },
-    { name: 'showheadphone', type: 'checkbox', checked: true, caption: 'Headphone?' },
-    { name: 'showlight', type: 'checkbox', checked: true, caption: 'Power Port?' },
-    { name: 'showmic', type: 'checkbox', checked: true, caption: 'Bottom Microphones?' },
-    { name: 'showspeaker', type: 'checkbox', checked: true, caption: 'Bottom Speaker?' },
-    { name: 'showcamera', type: 'checkbox', checked: true, caption: 'Back Camera?' },
-    { name: 'showflash', type: 'checkbox', checked: true, caption: 'Back Flash?' },
-    { name: 'others', type: 'group', caption: 'Other' },
-    { name: 'resolution', type: 'int', initial: 18, caption: 'Resolution?', min: 18, max: 144, step: 18 }
-  ]
-}
+const getParameterDefinitions = () => [
+  { name: 'iphone', type: 'group', caption: 'iPhone 5S' },
+  { name: 'color', type: 'choice', initial: '042/041/038/255', caption: 'Color?', values: ['016/169/240/255', '019/040/177/255', '165/190/215/255', '242/243/242/255', '190/170/235/255', '243/110/202/255', '252/088/166/255', '248/060/033/255', '253/102/054/255', '255/180/050/255', '240/202/029/255', '252/230/037/255', '190/212/003/255', '166/246/029/255', '035/141/053/255', '032/163/145/255', '245/030/015/230', '255/160/000/220', '250/210/000/220', '060/145/040/230', '195/000/070/230', '236/228/212/255', '215/200/164/255', '183/180/140/255', '132/134/096/255', '042/041/038/255', '255/255/255/250', '184/185/189/255', '080/049/039/255', '190/133/085/255'], captions: ['Sky Blue', 'Ultra Marine Blue', 'Blue Grey', 'Bluish White', 'Lila', 'Magenta', 'Flourescent Pink', 'Traffic Red', 'Warm Red', 'Dutch Orange', 'Olympic Gold', 'Signal Yellow', 'Flourescent Green', 'Intense Green', 'Leaf Green', 'Mint Turquoise', 'Red Transparent', 'Orange Transparent', 'Yellow Transparent', 'Green Transparent', 'Violet Transparent', 'Naturel', 'Pale Gold', 'Greenish Beige', 'Olive Green', 'Standard Black', 'Standard White', 'Shining Silver', 'Chocolate Brown', 'Light Brown'] },
+  { name: 'rendering', type: 'group', caption: 'Render' },
+  { name: 'showscreen', type: 'checkbox', checked: true, caption: 'Touch Screen?' },
+  { name: 'showhome', type: 'checkbox', checked: true, caption: 'Home Buttom?' },
+  { name: 'showfrontcam', type: 'checkbox', checked: true, caption: 'Front Camera?' },
+  { name: 'showfrontspk', type: 'checkbox', checked: true, caption: 'Front Speaker?' },
+  { name: 'showringsilent', type: 'checkbox', checked: true, caption: 'Ring/Silent Switch?' },
+  { name: 'showvolume', type: 'checkbox', checked: true, caption: 'Volume Switches?' },
+  { name: 'showpower', type: 'checkbox', checked: true, caption: 'Power Switch?' },
+  { name: 'showsim', type: 'checkbox', checked: true, caption: 'Sim Slot?' },
+  { name: 'showheadphone', type: 'checkbox', checked: true, caption: 'Headphone?' },
+  { name: 'showlight', type: 'checkbox', checked: true, caption: 'Power Port?' },
+  { name: 'showmic', type: 'checkbox', checked: true, caption: 'Bottom Microphones?' },
+  { name: 'showspeaker', type: 'checkbox', checked: true, caption: 'Bottom Speaker?' },
+  { name: 'showcamera', type: 'checkbox', checked: true, caption: 'Back Camera?' },
+  { name: 'showflash', type: 'checkbox', checked: true, caption: 'Back Flash?' },
+  { name: 'others', type: 'group', caption: 'Other' },
+  { name: 'resolution', type: 'int', initial: 18, caption: 'Resolution?', min: 18, max: 144, step: 18 }
+]
 
-function toPolygon (cag) {
+const toPolygon = (cag) => {
   const points = cag.getOutlinePaths()[0].points
   return CSG.Polygon.createFromPoints(points)
 }
@@ -32,7 +30,7 @@ function toPolygon (cag) {
 // each point in the path provides
 // - the amount (X) to expand the original cag radius
 // - the slice thickness (Y) to extrude
-function extrudeFromPath (cag, path) {
+const extrudeFromPath = (cag, path) => {
   const b = cag.getBounds()
   const w = b[1].x - b[0].x
   const h = b[1].y - b[0].y
@@ -47,7 +45,6 @@ function extrudeFromPath (cag, path) {
     callback: function (t, sliceno) {
       // OpenJsCad.log("t=["+t+"]");
       // OpenJsCad.log("sliceno=["+sliceno+"]");
-      const z = this.Z_step * (sliceno + 1)
       const v = this.path.points[sliceno]
       // OpenJsCad.log("point=["+v._x+","+v._y+"]");
       const sx = (this.original_x + (v._x * 2)) / this.original_x
@@ -59,7 +56,7 @@ function extrudeFromPath (cag, path) {
   )
 }
 
-function iphone5 (p) {
+const iphone5 = (p) => {
   const iphone = {}
   iphone.w = 58.6
   iphone.h = 123.8
@@ -155,36 +152,10 @@ function iphone5 (p) {
   p.iphone = iphone
 }
 
-function body (p) {
-  let x, y, z
-  let rx, ry, rz, rr
-  rx = p.iphone.rw
-  ry = p.iphone.rh
-  rz = p.iphone.rd
-  rr = p.iphone.rr
-  let b = CAG.roundedRectangle({ center: [0, 0], radius: [rx, ry], roundradius: rr, resolution: p.resolution })
-  b = b.extrude({ offset: [0, 0, rz * 2] })
-  b = b.translate([0, 0, -rz])
-
-  rx = p.iphone.rw2
-  ry = p.iphone.rh2
-  rz = p.iphone.rd2
-  rr = p.iphone.rr2
-  let b1 = CAG.roundedRectangle({ center: [0, 0], radius: [rx, ry], roundradius: rr, resolution: p.resolution })
-  b1 = b1.extrude({ offset: [0, 0, rz * 2] })
-  b1 = b1.translate([0, 0, -rz])
-
-  b = b.union(b1)
-  return b
-}
-
-function makeBody (p) {
-  let x, y, z
-  let rx, ry, rz, rr
-  rx = p.iphone.rw
-  ry = p.iphone.rh
-  rz = p.iphone.rd
-  rr = p.iphone.rr
+const makeBody = (p) => {
+  const rx = p.iphone.rw
+  const ry = p.iphone.rh
+  const rr = p.iphone.rr
   const outline = CAG.roundedRectangle({ center: [0, 0], radius: [rx, ry], roundradius: rr, resolution: p.resolution })
   // return outline;
   let b = CSG.Path2D.arc({
@@ -204,14 +175,12 @@ function makeBody (p) {
   return b3.translate([0, 0, -p.iphone.rd])
 }
 
-function back_camera (p) {
-  let x, y, z
-  let rx, ry, rz, rr
-  z = 1.0
-  rr = p.iphone.bc_rr
+const makeBackCamera = (p) => {
+  let z = 1.0
+  let rr = p.iphone.bc_rr
   let bc = CSG.cylinder({ start: [0, 0, -z], end: [0, 0, z], radius: rr, resolution: p.resolution })
-  x = p.iphone.bc_xoff
-  y = p.iphone.rh + p.iphone.bc_yoff
+  let x = p.iphone.bc_xoff
+  let y = p.iphone.rh + p.iphone.bc_yoff
   z = -p.iphone.rd + z
   bc = bc.translate([x, y, z])
 
@@ -227,121 +196,105 @@ function back_camera (p) {
   return bc
 }
 
-function makeHomeButton (p) {
-  let x, y, z
-  let rx, ry, rz, rr
-  z = 1.0
-  rr = p.iphone.hb_rr
+const makeHomeButton = (p) => {
+  let z = 1.0
+  const rr = p.iphone.hb_rr
   let hb = CSG.cylinder({ start: [0, 0, -z], end: [0, 0, z], radius: rr, resolution: p.resolution })
-  x = p.iphone.hb_xoff
-  y = (-p.iphone.rh) + p.iphone.hb_yoff
+  const x = p.iphone.hb_xoff
+  const y = (-p.iphone.rh) + p.iphone.hb_yoff
   z = p.iphone.rd - z
   hb = hb.translate([x, y, z])
   return hb
 }
 
-function makeDisplay (p) {
-  let x, y, z
-  let rx, ry, rz, rr
-  rr = 0.5 / 2
-  rx = p.iphone.ds_rw
-  ry = p.iphone.ds_rh
+const makeDisplay = (p) => {
+  const rr = 0.5 / 2
+  const rx = p.iphone.ds_rw
+  const ry = p.iphone.ds_rh
   let ds = CAG.roundedRectangle({ center: [0, 0], radius: [rx, ry], roundradius: rr, resolution: p.resolution })
-  z = 1.0
+  let z = 1.0
   ds = ds.extrude({ offset: [0, 0, z] })
-  x = p.iphone.ds_xoff
-  y = p.iphone.rh - p.iphone.ds_rh + p.iphone.ds_yoff
+  const x = p.iphone.ds_xoff
+  const y = p.iphone.rh - p.iphone.ds_rh + p.iphone.ds_yoff
   z = p.iphone.rd - z
   ds = ds.translate([x, y, z])
   return ds
 }
 
-function makeFrontSensor (p) {
-  let x, y, z
-  let rx, ry, rz, rr
-  z = 1.0
-  rr = p.iphone.fs_rr
+const makeFrontSensor = (p) => {
+  let z = 1.0
+  const rr = p.iphone.fs_rr
   let fs = CSG.cylinder({ start: [0, 0, -z], end: [0, 0, z], radius: rr, resolution: p.resolution })
-  x = p.iphone.fs_xoff
-  y = p.iphone.rh + p.iphone.fs_yoff
+  const x = p.iphone.fs_xoff
+  const y = p.iphone.rh + p.iphone.fs_yoff
   z = p.iphone.rd2 - z
   fs = fs.translate([x, y, z])
   return fs
 }
 
-function makeFrontMic (p) {
-  let x, y, z
-  let rx, ry, rz, rr
-  rr = p.iphone.fm_rr
-  rx = p.iphone.fm_rw
-  ry = p.iphone.fm_rh
+const makeFrontMic = (p) => {
+  const rr = p.iphone.fm_rr
+  const rx = p.iphone.fm_rw
+  const ry = p.iphone.fm_rh
   let fm = CAG.roundedRectangle({ center: [0, 0], radius: [rx, ry], roundradius: rr, resolution: p.resolution })
-  z = 1.0
+  let z = 1.0
   fm = fm.extrude({ offset: [0, 0, z] })
-  x = p.iphone.fm_xoff
-  y = p.iphone.rh + p.iphone.fm_yoff
+  const x = p.iphone.fm_xoff
+  const y = p.iphone.rh + p.iphone.fm_yoff
   z = p.iphone.rd2 - z
   fm = fm.translate([x, y, z])
   return fm
 }
 
-function power_button (p) {
-  let x, y, z
-  let rx, ry, rz, rr
-  rx = p.iphone.pb_rw
-  ry = p.iphone.pb_rh
-  rr = ry * 0.90
+const makePowerButton = (p) => {
+  const rx = p.iphone.pb_rw
+  const ry = p.iphone.pb_rh
+  const rr = ry * 0.90
   let pb = CAG.roundedRectangle({ center: [0, 0], radius: [rx, ry], roundradius: rr, resolution: p.resolution })
-  z = p.iphone.pb_rd * 2
+  let z = p.iphone.pb_rd * 2
   pb = pb.extrude({ offset: [0, 0, z] }).rotateX(90) // flip to side
-  x = p.iphone.pb_xoff
-  y = p.iphone.rh + z
+  const x = p.iphone.pb_xoff
+  const y = p.iphone.rh + z
   z = p.iphone.pb_yoff
   pb = pb.translate([x, y, z])
   return pb
 }
 
-function earphone_jack (p) {
-  let x, y, z
-  let rx, ry, rz, rr
-  z = 1.0
-  rr = p.iphone.ej_rr
+const makeEarphoneJack = (p) => {
+  let z = 1.0
+  const rr = p.iphone.ej_rr
   let ej = CSG.cylinder({ start: [0, 0, -z], end: [0, 0, z], radius: rr, resolution: p.resolution })
   ej = ej.rotateX(90) // flip to side
-  x = p.iphone.ej_xoff
-  y = (-p.iphone.rh + z / 2)
+  const x = p.iphone.ej_xoff
+  const y = (-p.iphone.rh + z / 2)
   z = p.iphone.ej_yoff
   ej = ej.translate([x, y, z])
   return ej
 }
 
-function makePowerJack (p) {
-  let x, y, z
-  let rx, ry, rz, rr
-  rx = p.iphone.pj_rw
-  ry = p.iphone.pj_rh
-  rr = p.iphone.pj_rr
+const makePowerJack = (p) => {
+  const rx = p.iphone.pj_rw
+  const ry = p.iphone.pj_rh
+  const rr = p.iphone.pj_rr
   let pj = CAG.roundedRectangle({ center: [0, 0], radius: [rx, ry], roundradius: rr, resolution: p.resolution })
-  z = 1.0
+  let z = 1.0
   pj = pj.extrude({ offset: [0, 0, z] }).rotateX(-90) // flip to side
-  x = p.iphone.pj_xoff
-  y = (-p.iphone.rh - z / 2)
+  const x = p.iphone.pj_xoff
+  const y = (-p.iphone.rh - z / 2)
   z = p.iphone.pj_yoff
   pj = pj.translate([x, y, z])
   return pj
 }
 
-function makeSpeakers (p) {
-  let x, y, z
-  let rx, ry, rz, rr
-  rx = p.iphone.sp_rw
-  ry = p.iphone.sp_rh
-  rr = ry * 0.90
+const makeSpeakers = (p) => {
+  const rx = p.iphone.sp_rw
+  const ry = p.iphone.sp_rh
+  const rr = ry * 0.90
   let sp = CAG.roundedRectangle({ center: [0, 0], radius: [rx, ry], roundradius: rr, resolution: p.resolution })
-  z = 1.0
+  let z = 1.0
   sp = sp.extrude({ offset: [0, 0, z] }).rotateX(-90) // flip to side
-  x = p.iphone.sp_xoff
-  y = (-p.iphone.rh - z / 2)
+  let x = p.iphone.sp_xoff
+  const y = (-p.iphone.rh - z / 2)
   z = p.iphone.sp_yoff
   const sp1 = sp.translate([x, y, z])
   x = -p.iphone.sp_xoff
@@ -350,31 +303,27 @@ function makeSpeakers (p) {
   return sp
 }
 
-function silence_switch (p) {
-  let x, y, z
-  let rx, ry, rz, rr
-  rx = p.iphone.ss_rw
-  ry = p.iphone.ss_rh
-  rr = 0.5
+const makeSilenceSwitch = (p) => {
+  const rx = p.iphone.ss_rw
+  const ry = p.iphone.ss_rh
+  const rr = 0.5
   let ss = CAG.roundedRectangle({ center: [0, 0], radius: [rx, ry], roundradius: rr, resolution: p.resolution })
-  z = p.iphone.ss_rd * 2
+  let z = p.iphone.ss_rd * 2
   ss = ss.extrude({ offset: [0, 0, z] }).rotateZ(-90).rotateY(-90) // flip to side
-  x = (-p.iphone.rw)
-  y = p.iphone.ss_xoff
+  const x = (-p.iphone.rw)
+  const y = p.iphone.ss_xoff
   z = p.iphone.ss_yoff
   ss = ss.translate([x, y, z])
   return ss
 }
 
-function volume_buttons (p) {
-  let x, y, z
-  let rx, ry, rz, rr
-  rr = p.iphone.vb_rr
-  z = p.iphone.vb_rd * 2
+const makeVolumeButton = (p) => {
+  const rr = p.iphone.vb_rr
+  let z = p.iphone.vb_rd * 2
   let vb = CSG.cylinder({ start: [0, 0, 0], end: [0, 0, z], radius: rr, resolution: p.resolution })
   vb = vb.rotateY(-90) // flip to side
-  x = (-p.iphone.rw - z)
-  y = p.iphone.vb_xoff1
+  const x = (-p.iphone.rw - z)
+  let y = p.iphone.vb_xoff1
   z = p.iphone.vb_yoff
   const vb1 = vb.translate([x, y, z])
   y = p.iphone.vb_xoff2
@@ -383,23 +332,21 @@ function volume_buttons (p) {
   return vb
 }
 
-function makeSimSlot (p) {
-  let x, y, z
-  let rx, ry, rz, rr
-  rx = p.iphone.sm_rw
-  ry = p.iphone.sm_rh
-  rr = ry * 0.90
+const makeSimSlot = (p) => {
+  const rx = p.iphone.sm_rw
+  const ry = p.iphone.sm_rh
+  const rr = ry * 0.90
   let sm = CAG.roundedRectangle({ center: [0, 0], radius: [rx, ry], roundradius: rr, resolution: p.resolution })
-  z = 1.0
+  let z = 1.0
   sm = sm.extrude({ offset: [0, 0, z] }).rotateZ(-90).rotateY(90) // flip to side
-  x = p.iphone.rw - z / 2
-  y = p.iphone.sm_xoff
+  const x = p.iphone.rw - z / 2
+  const y = p.iphone.sm_xoff
   z = p.iphone.sm_yoff
   sm = sm.translate([x, y, z])
   return sm
 }
 
-function main (p) {
+const main = (p) => {
   // var p = {};
   // p.resolution = 16;
   p.steel = [0.9777, 0.9777, 0.9777]
@@ -409,7 +356,7 @@ function main (p) {
   iphone5(p)
   let b = makeBody(p)
   // back
-  const bc = back_camera(p).setColor(p.silver)
+  const bc = makeBackCamera(p).setColor(p.silver)
   b = b.subtract(bc).union(bc)
   // front
   const hb = makeHomeButton(p).setColor(1.0, 1.0, 1.0)
@@ -421,19 +368,19 @@ function main (p) {
   const fm = makeFrontMic(p).setColor(p.silver)
   b = b.subtract(fm).union(fm)
   // top edge
-  const pb = power_button(p).setColor(p.silver)
+  const pb = makePowerButton(p).setColor(p.silver)
   b = b.union(pb)
   // bottom edge
   const pj = makePowerJack(p).setColor(0, 0, 0)
   b = b.subtract(pj).union(pj)
   const sp = makeSpeakers(p).setColor(0, 0, 0)
   b = b.subtract(sp).union(sp)
-  const ej = earphone_jack(p).setColor(0, 0, 0)
+  const ej = makeEarphoneJack(p).setColor(0, 0, 0)
   b = b.subtract(ej).union(ej)
   // left edge
-  const ss = silence_switch(p).setColor(p.silver)
+  const ss = makeSilenceSwitch(p).setColor(p.silver)
   b = b.union(ss)
-  const vb = volume_buttons(p).setColor(p.silver)
+  const vb = makeVolumeButton(p).setColor(p.silver)
   b = b.union(vb)
   // right edge
   const sm = makeSimSlot(p).setColor(p.silver)

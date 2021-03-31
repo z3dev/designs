@@ -1,24 +1,26 @@
-const getParameterDefinitions = () => [
-  { name: 'rails', type: 'group', caption: 'Rails' },
-  { name: 'rail_d', type: 'int', initial: 11, caption: 'Diameter (mm)?' },
-  { name: 'edges', type: 'group', caption: 'Edges' },
-  { name: 'edge_v', type: 'int', initial: 18, caption: 'Height (mm)?' },
-  { name: 'edge_h', type: 'int', initial: 12, caption: 'Thickness (mm)?' },
-  { name: 'holders', type: 'group', caption: 'Holders' },
-  { name: 'type', type: 'choice', initial: 0, caption: 'Type?', values: [0, 1, 2], captions: ['Right', 'Left', 'Middle'] },
-  { name: 'offset_v', type: 'int', initial: 5, caption: 'Vertical Offset (mm)?' },
-  { name: 'offset_h', type: 'int', initial: 30, caption: 'Horizontal Offset (mm)?' },
-  { name: 'cap_l', type: 'int', initial: 15, caption: 'Length (mm)?' },
-  { name: 'flanges', type: 'group', caption: 'Flanges' },
-  { name: 'flange_v', type: 'int', initial: 40, caption: 'Height (mm)?' },
-  { name: 'flange_a', type: 'int', initial: 40, caption: 'Arch (mm)?' },
-  { name: 'screws', type: 'group', caption: 'Screws' },
-  { name: 'screw_h_d', type: 'float', initial: 5.25, step: 0.25, caption: 'Head Diameter (mm)?' },
-  { name: 'screw_s_d', type: 'float', initial: 3.25, step: 0.25, caption: 'Shank Diameter (mm)?' },
-  { name: 'others', type: 'group', caption: 'Others' },
-  { name: 'resolution', type: 'int', initial: 36, caption: 'Resolution?' },
-  { name: 'color', type: 'choice', initial: '255/180/050/255', caption: 'Color?', values: ['016/169/240/255', '019/040/177/255', '165/190/215/255', '242/243/242/255', '190/170/235/255', '243/110/202/255', '252/088/166/255', '248/060/033/255', '253/102/054/255', '255/180/050/255', '240/202/029/255', '252/230/037/255', '190/212/003/255', '166/246/029/255', '035/141/053/255', '032/163/145/255', '245/030/015/230', '255/160/000/220', '250/210/000/220', '060/145/040/230', '195/000/070/230', '236/228/212/255', '215/200/164/255', '183/180/140/255', '132/134/096/255', '042/041/038/255', '255/255/255/250', '184/185/189/255', '080/049/039/255', '190/133/085/255'], captions: ['Sky Blue', 'Ultra Marine Blue', 'Blue Grey', 'Bluish White', 'Lila', 'Magenta', 'Flourescent Pink', 'Traffic Red', 'Warm Red', 'Dutch Orange', 'Olympic Gold', 'Signal Yellow', 'Flourescent Green', 'Intense Green', 'Leaf Green', 'Mint Turquoise', 'Red Transparent', 'Orange Transparent', 'Yellow Transparent', 'Green Transparent', 'Violet Transparent', 'Naturel', 'Pale Gold', 'Greenish Beige', 'Olive Green', 'Standard Black', 'Standard White', 'Shining Silver', 'Chocolate Brown', 'Light Brown'] }
-]
+function getParameterDefinitions() {
+  return [
+    { name: 'rails', type: 'group', caption: 'Rails' },
+    { name: 'rail_d', type: 'int', initial: 11, caption: 'Diameter (mm)?' },
+    { name: 'edges', type: 'group', caption: 'Edges' },
+    { name: 'edge_v', type: 'int', initial: 18, caption: 'Height (mm)?' },
+    { name: 'edge_h', type: 'int', initial: 12, caption: 'Thickness (mm)?' },
+    { name: 'holders', type: 'group', caption: 'Holders' },
+    { name: 'type', type: 'choice', initial: 0, caption: 'Type?', values: [0, 1, 2], captions: ['Right', 'Left', 'Middle'] },
+    { name: 'offset_v', type: 'int', initial: 5, caption: 'Vertical Offset (mm)?' },
+    { name: 'offset_h', type: 'int', initial: 30, caption: 'Horizontal Offset (mm)?' },
+    { name: 'cap_l', type: 'int', initial: 15, caption: 'Length (mm)?' },
+    { name: 'flanges', type: 'group', caption: 'Flanges' },
+    { name: 'flange_v', type: 'int', initial: 40, caption: 'Height (mm)?' },
+    { name: 'flange_a', type: 'int', initial: 40, caption: 'Arch (mm)?' },
+    { name: 'screws', type: 'group', caption: 'Screws' },
+    { name: 'screw_h_d', type: 'float', initial: 5.25, step: 0.25, caption: 'Head Diameter (mm)?' },
+    { name: 'screw_s_d', type: 'float', initial: 3.25, step: 0.25, caption: 'Shank Diameter (mm)?' },
+    { name: 'others', type: 'group', caption: 'Others' },
+    { name: 'resolution', type: 'int', initial: 36, caption: 'Resolution?' },
+    { name: 'color', type: 'choice', initial: '255/180/050/255', caption: 'Color?', values: ['016/169/240/255', '019/040/177/255', '165/190/215/255', '242/243/242/255', '190/170/235/255', '243/110/202/255', '252/088/166/255', '248/060/033/255', '253/102/054/255', '255/180/050/255', '240/202/029/255', '252/230/037/255', '190/212/003/255', '166/246/029/255', '035/141/053/255', '032/163/145/255', '245/030/015/230', '255/160/000/220', '250/210/000/220', '060/145/040/230', '195/000/070/230', '236/228/212/255', '215/200/164/255', '183/180/140/255', '132/134/096/255', '042/041/038/255', '255/255/255/250', '184/185/189/255', '080/049/039/255', '190/133/085/255'], captions: ['Sky Blue', 'Ultra Marine Blue', 'Blue Grey', 'Bluish White', 'Lila', 'Magenta', 'Flourescent Pink', 'Traffic Red', 'Warm Red', 'Dutch Orange', 'Olympic Gold', 'Signal Yellow', 'Flourescent Green', 'Intense Green', 'Leaf Green', 'Mint Turquoise', 'Red Transparent', 'Orange Transparent', 'Yellow Transparent', 'Green Transparent', 'Violet Transparent', 'Naturel', 'Pale Gold', 'Greenish Beige', 'Olive Green', 'Standard Black', 'Standard White', 'Shining Silver', 'Chocolate Brown', 'Light Brown'] }
+  ]
+}
 
 const makeBoltHole = (p) => {
   const fit = 0.20

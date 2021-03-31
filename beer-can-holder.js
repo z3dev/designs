@@ -1,23 +1,25 @@
-const getParameterDefinitions = () => [
-  { name: 'handle', type: 'group', caption: 'Handle' },
-  { name: 'handle_offset', type: 'int', initial: 22, caption: 'Offset for fingers?' },
-  { name: 'handle_thickness', type: 'int', initial: 10, caption: 'Thickness?' },
-  { name: 'handle_width', type: 'int', initial: 20, caption: 'Width?' },
-  { name: 'can', type: 'group', caption: 'Can' },
-  { name: 'can_show', type: 'checkbox', checked: true, caption: 'Show?' },
-  { name: 'can_diameter', type: 'int', initial: 66, caption: 'Diameter?' },
-  { name: 'can_height', type: 'int', initial: 116, caption: 'Height?' },
-  { name: 'can_lip', type: 'group', caption: 'Top Lip' },
-  { name: 'can_lip_diameter', type: 'int', initial: 57, caption: 'Outside Diameter?' },
-  { name: 'can_lip_thickness', type: 'float', initial: 2.0, step: 0.1, caption: 'Thickness?' },
-  { name: 'can_lip_height', type: 'float', initial: 3.0, step: 0.1, caption: 'Height?' },
-  { name: 'can_bot', type: 'group', caption: 'Bottom Lip' },
-  { name: 'can_bot_diameter', type: 'int', initial: 53, caption: 'Outside Diameter?' },
-  { name: 'can_bot_thickness', type: 'float', initial: 4.0, step: 0.1, caption: 'Thickness?' },
-  { name: 'can_bot_height', type: 'float', initial: 3.0, step: 0.1, caption: 'Height?' },
-  { name: 'others', type: 'group', caption: 'Others' },
-  { name: 'color', type: 'choice', caption: 'Color?', values: ['016/169/240/255', '019/040/177/255', '165/190/215/255', '242/243/242/255', '190/170/235/255', '243/110/202/255', '252/088/166/255', '248/060/033/255', '253/102/054/255', '255/180/050/255', '240/202/029/255', '252/230/037/255', '190/212/003/255', '166/246/029/255', '035/141/053/255', '032/163/145/255', '245/030/015/230', '255/160/000/220', '250/210/000/220', '060/145/040/230', '195/000/070/230', '236/228/212/255', '215/200/164/255', '183/180/140/255', '132/134/096/255', '042/041/038/255', '255/255/255/250', '184/185/189/255', '080/049/039/255', '190/133/085/255'], captions: ['Sky Blue', 'Ultra Marine Blue', 'Blue Grey', 'Bluish White', 'Lila', 'Magenta', 'Flourescent Pink', 'Traffic Red', 'Warm Red', 'Dutch Orange', 'Olympic Gold', 'Signal Yellow', 'Flourescent Green', 'Intense Green', 'Leaf Green', 'Mint Turquoise', 'Red Transparent', 'Orange Transparent', 'Yellow Transparent', 'Green Transparent', 'Violet Transparent', 'Naturel', 'Pale Gold', 'Greenish Beige', 'Olive Green', 'Standard Black', 'Standard White', 'Shining Silver', 'Chocolate Brown', 'Light Brown'] }
-]
+function getParameterDefinitions() {
+  return [
+    { name: 'handle', type: 'group', caption: 'Handle' },
+    { name: 'handle_offset', type: 'int', initial: 22, caption: 'Offset for fingers?' },
+    { name: 'handle_thickness', type: 'int', initial: 10, caption: 'Thickness?' },
+    { name: 'handle_width', type: 'int', initial: 20, caption: 'Width?' },
+    { name: 'can', type: 'group', caption: 'Can' },
+    { name: 'can_show', type: 'checkbox', checked: true, caption: 'Show?' },
+    { name: 'can_diameter', type: 'int', initial: 66, caption: 'Diameter?' },
+    { name: 'can_height', type: 'int', initial: 116, caption: 'Height?' },
+    { name: 'can_lip', type: 'group', caption: 'Top Lip' },
+    { name: 'can_lip_diameter', type: 'int', initial: 57, caption: 'Outside Diameter?' },
+    { name: 'can_lip_thickness', type: 'float', initial: 2.0, step: 0.1, caption: 'Thickness?' },
+    { name: 'can_lip_height', type: 'float', initial: 3.0, step: 0.1, caption: 'Height?' },
+    { name: 'can_bot', type: 'group', caption: 'Bottom Lip' },
+    { name: 'can_bot_diameter', type: 'int', initial: 53, caption: 'Outside Diameter?' },
+    { name: 'can_bot_thickness', type: 'float', initial: 4.0, step: 0.1, caption: 'Thickness?' },
+    { name: 'can_bot_height', type: 'float', initial: 3.0, step: 0.1, caption: 'Height?' },
+    { name: 'others', type: 'group', caption: 'Others' },
+    { name: 'color', type: 'choice', caption: 'Color?', values: ['016/169/240/255', '019/040/177/255', '165/190/215/255', '242/243/242/255', '190/170/235/255', '243/110/202/255', '252/088/166/255', '248/060/033/255', '253/102/054/255', '255/180/050/255', '240/202/029/255', '252/230/037/255', '190/212/003/255', '166/246/029/255', '035/141/053/255', '032/163/145/255', '245/030/015/230', '255/160/000/220', '250/210/000/220', '060/145/040/230', '195/000/070/230', '236/228/212/255', '215/200/164/255', '183/180/140/255', '132/134/096/255', '042/041/038/255', '255/255/255/250', '184/185/189/255', '080/049/039/255', '190/133/085/255'], captions: ['Sky Blue', 'Ultra Marine Blue', 'Blue Grey', 'Bluish White', 'Lila', 'Magenta', 'Flourescent Pink', 'Traffic Red', 'Warm Red', 'Dutch Orange', 'Olympic Gold', 'Signal Yellow', 'Flourescent Green', 'Intense Green', 'Leaf Green', 'Mint Turquoise', 'Red Transparent', 'Orange Transparent', 'Yellow Transparent', 'Green Transparent', 'Violet Transparent', 'Naturel', 'Pale Gold', 'Greenish Beige', 'Olive Green', 'Standard Black', 'Standard White', 'Shining Silver', 'Chocolate Brown', 'Light Brown'] }
+  ]
+}
 
 // A handle for beer cans (and other cans as well)
 // By JAG

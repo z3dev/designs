@@ -1,5 +1,5 @@
 /*
-const getParameterDefinitions = () => {
+function getParameterDefinitions() {
   return [
     { name:     'n_splines',
       type:     'int',

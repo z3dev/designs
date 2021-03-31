@@ -1,20 +1,22 @@
-const getParameterDefinitions = () => [
-  { name: 'paper', type: 'group', caption: 'Paper' },
-  { name: 'p_thickness', type: 'float', initial: 0.95, caption: 'Thickness (mm)?', step: 0.05, min: 0.1, max: 2.0 },
-  { name: 'p_length', type: 'float', initial: 230.0, caption: 'Length (mm)?', step: 1.0, min: 5.0, max: 1000.0 },
-  { name: 'p_width', type: 'float', initial: 70.0, caption: 'Width (mm)?', step: 1.0, min: 1.0, max: 1000.0 },
-  { name: 'p_fold', type: 'float', initial: 20.0, caption: 'End Fold (mm)?', step: 1.0, min: 1.0, max: 1000.0 },
-  { name: 'p_use', type: 'checkbox', checked: true, caption: 'Use?' },
-  { name: 'block', type: 'group', caption: 'Sanding Block' },
-  { name: 'b_length', type: 'float', initial: 230.0, caption: 'Length (mm)?', step: 1.0, min: 5.0, max: 1000.0 },
-  { name: 'b_width', type: 'float', initial: 70.0, caption: 'Width (mm)?', step: 1.0, min: 1.0, max: 1000.0 },
-  { name: 'b_heigth', type: 'float', initial: 20.0, caption: 'Heigth (mm)?', step: 1.0, min: 1.0, max: 100.0 },
-  { name: 'b_corner', type: 'float', initial: 5.0, caption: 'Corner radius (mm)?', step: 0.5, min: 1.0, max: 100.0 },
-  { name: 'b_use', type: 'checkbox', checked: false, caption: 'Use?' },
-  { name: 'others', type: 'group', caption: 'Others' },
-  { name: 'color', type: 'choice', initial: '253/102/054/255', caption: 'Color?', values: ['016/169/240/255', '019/040/177/255', '165/190/215/255', '242/243/242/255', '190/170/235/255', '243/110/202/255', '252/088/166/255', '248/060/033/255', '253/102/054/255', '255/180/050/255', '240/202/029/255', '252/230/037/255', '190/212/003/255', '166/246/029/255', '035/141/053/255', '032/163/145/255', '245/030/015/230', '255/160/000/220', '250/210/000/220', '060/145/040/230', '195/000/070/230', '236/228/212/255', '215/200/164/255', '183/180/140/255', '132/134/096/255', '042/041/038/255', '255/255/255/250', '184/185/189/255', '080/049/039/255', '190/133/085/255'], captions: ['Sky Blue', 'Ultra Marine Blue', 'Blue Grey', 'Bluish White', 'Lila', 'Magenta', 'Flourescent Pink', 'Traffic Red', 'Warm Red', 'Dutch Orange', 'Olympic Gold', 'Signal Yellow', 'Flourescent Green', 'Intense Green', 'Leaf Green', 'Mint Turquoise', 'Red Transparent', 'Orange Transparent', 'Yellow Transparent', 'Green Transparent', 'Violet Transparent', 'Naturel', 'Pale Gold', 'Greenish Beige', 'Olive Green', 'Standard Black', 'Standard White', 'Shining Silver', 'Chocolate Brown', 'Light Brown'] },
-  { name: 'resolution', type: 'int', initial: 32, caption: 'Resolution?' }
-]
+function getParameterDefinitions() {
+  return [
+    { name: 'paper', type: 'group', caption: 'Paper' },
+    { name: 'p_thickness', type: 'float', initial: 0.95, caption: 'Thickness (mm)?', step: 0.05, min: 0.1, max: 2.0 },
+    { name: 'p_length', type: 'float', initial: 230.0, caption: 'Length (mm)?', step: 1.0, min: 5.0, max: 1000.0 },
+    { name: 'p_width', type: 'float', initial: 70.0, caption: 'Width (mm)?', step: 1.0, min: 1.0, max: 1000.0 },
+    { name: 'p_fold', type: 'float', initial: 20.0, caption: 'End Fold (mm)?', step: 1.0, min: 1.0, max: 1000.0 },
+    { name: 'p_use', type: 'checkbox', checked: true, caption: 'Use?' },
+    { name: 'block', type: 'group', caption: 'Sanding Block' },
+    { name: 'b_length', type: 'float', initial: 230.0, caption: 'Length (mm)?', step: 1.0, min: 5.0, max: 1000.0 },
+    { name: 'b_width', type: 'float', initial: 70.0, caption: 'Width (mm)?', step: 1.0, min: 1.0, max: 1000.0 },
+    { name: 'b_heigth', type: 'float', initial: 20.0, caption: 'Heigth (mm)?', step: 1.0, min: 1.0, max: 100.0 },
+    { name: 'b_corner', type: 'float', initial: 5.0, caption: 'Corner radius (mm)?', step: 0.5, min: 1.0, max: 100.0 },
+    { name: 'b_use', type: 'checkbox', checked: false, caption: 'Use?' },
+    { name: 'others', type: 'group', caption: 'Others' },
+    { name: 'color', type: 'choice', initial: '253/102/054/255', caption: 'Color?', values: ['016/169/240/255', '019/040/177/255', '165/190/215/255', '242/243/242/255', '190/170/235/255', '243/110/202/255', '252/088/166/255', '248/060/033/255', '253/102/054/255', '255/180/050/255', '240/202/029/255', '252/230/037/255', '190/212/003/255', '166/246/029/255', '035/141/053/255', '032/163/145/255', '245/030/015/230', '255/160/000/220', '250/210/000/220', '060/145/040/230', '195/000/070/230', '236/228/212/255', '215/200/164/255', '183/180/140/255', '132/134/096/255', '042/041/038/255', '255/255/255/250', '184/185/189/255', '080/049/039/255', '190/133/085/255'], captions: ['Sky Blue', 'Ultra Marine Blue', 'Blue Grey', 'Bluish White', 'Lila', 'Magenta', 'Flourescent Pink', 'Traffic Red', 'Warm Red', 'Dutch Orange', 'Olympic Gold', 'Signal Yellow', 'Flourescent Green', 'Intense Green', 'Leaf Green', 'Mint Turquoise', 'Red Transparent', 'Orange Transparent', 'Yellow Transparent', 'Green Transparent', 'Violet Transparent', 'Naturel', 'Pale Gold', 'Greenish Beige', 'Olive Green', 'Standard Black', 'Standard White', 'Shining Silver', 'Chocolate Brown', 'Light Brown'] },
+    { name: 'resolution', type: 'int', initial: 32, caption: 'Resolution?' }
+  ]
+}
 
 const toPolygon = (cag) => {
   const points = cag.getOutlinePaths()[0].points

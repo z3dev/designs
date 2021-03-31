@@ -1,14 +1,16 @@
-const getParameterDefinitions = () => [
-  { name: 'design', type: 'group', caption: 'Design' },
-  { name: 'scale', type: 'float', initial: 3.5, min: 1.0, max: 10.0, step: 0.1, caption: 'Scale?' },
-  { name: 'fitx', type: 'float', initial: 0.0, min: -10.0, max: 10.0, step: 1, caption: 'Adjust X?' },
-  { name: 'fity', type: 'float', initial: 0.0, min: -10.0, max: 10.0, step: 1, caption: 'Adjust Y?' },
-  { name: 'fitz', type: 'float', initial: 0.0, min: -10.0, max: 10.0, step: 1, caption: 'Adjust Z?' },
-  { name: 'ear', type: 'group', caption: 'Ear' },
-  { name: 'type', type: 'choice', initial: 0, caption: 'Side?', values: [0, 1], captions: ['Right', 'Left'] },
-  { name: 'wall', type: 'float', initial: 1.6, min: 1.0, max: 10.0, step: 0.1, caption: 'Wall Thickness?' },
-  { name: 'show', type: 'checkbox', checked: true, caption: 'Show?' }
-]
+function getParameterDefinitions() {
+  return [
+    { name: 'design', type: 'group', caption: 'Design' },
+    { name: 'scale', type: 'float', initial: 3.5, min: 1.0, max: 10.0, step: 0.1, caption: 'Scale?' },
+    { name: 'fitx', type: 'float', initial: 0.0, min: -10.0, max: 10.0, step: 1, caption: 'Adjust X?' },
+    { name: 'fity', type: 'float', initial: 0.0, min: -10.0, max: 10.0, step: 1, caption: 'Adjust Y?' },
+    { name: 'fitz', type: 'float', initial: 0.0, min: -10.0, max: 10.0, step: 1, caption: 'Adjust Z?' },
+    { name: 'ear', type: 'group', caption: 'Ear' },
+    { name: 'type', type: 'choice', initial: 0, caption: 'Side?', values: [0, 1], captions: ['Right', 'Left'] },
+    { name: 'wall', type: 'float', initial: 1.6, min: 1.0, max: 10.0, step: 0.1, caption: 'Wall Thickness?' },
+    { name: 'show', type: 'checkbox', checked: true, caption: 'Show?' }
+  ]
+}
 
 const necomimi = (p) => {
   p.necomimi_b_x = 39.5

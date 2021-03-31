@@ -1,24 +1,26 @@
-const getParameterDefinitions = () => [
-  { name: 'rendering', type: 'group', caption: 'Render' },
-  { name: 'showscreen', type: 'checkbox', checked: true, caption: 'Touch Screen?' },
-  { name: 'showhome', type: 'checkbox', checked: true, caption: 'Home Buttom?' },
-  { name: 'showfrontcam', type: 'checkbox', checked: true, caption: 'Front Camera?' },
-  { name: 'showfrontsen', type: 'checkbox', checked: true, caption: 'Front Sensor?' },
-  { name: 'showfrontspk', type: 'checkbox', checked: true, caption: 'Front Speaker?' },
-  { name: 'showringsilent', type: 'checkbox', checked: true, caption: 'Ring/Silent Switch?' },
-  { name: 'showvolume', type: 'checkbox', checked: true, caption: 'Volume Switches?' },
-  { name: 'showpower', type: 'checkbox', checked: true, caption: 'Power Switch?' },
-  { name: 'showsim', type: 'checkbox', checked: true, caption: 'Sim Slot?' },
-  { name: 'showheadphone', type: 'checkbox', checked: true, caption: 'Headphone?' },
-  { name: 'showlight', type: 'checkbox', checked: true, caption: 'Power Port?' },
-  { name: 'showmic', type: 'checkbox', checked: true, caption: 'Bottom Microphones?' },
-  { name: 'showspeaker', type: 'checkbox', checked: true, caption: 'Bottom Speaker?' },
-  { name: 'showcamera', type: 'checkbox', checked: true, caption: 'Back Camera?' },
-  { name: 'showflash', type: 'checkbox', checked: true, caption: 'Back Flash?' },
-  { name: 'others', type: 'group', caption: 'Others' },
-  { name: 'resolution', type: 'int', initial: 36, caption: 'Resolution?' },
-  { name: 'color', type: 'choice', caption: 'Color?', initial: '184/185/189/255', values: ['016/169/240/255', '019/040/177/255', '165/190/215/255', '242/243/242/255', '190/170/235/255', '243/110/202/255', '252/088/166/255', '248/060/033/255', '253/102/054/255', '255/180/050/255', '240/202/029/255', '252/230/037/255', '190/212/003/255', '166/246/029/255', '035/141/053/255', '032/163/145/255', '245/030/015/230', '255/160/000/220', '250/210/000/220', '060/145/040/230', '195/000/070/230', '236/228/212/255', '215/200/164/255', '183/180/140/255', '132/134/096/255', '042/041/038/255', '255/255/255/250', '184/185/189/255', '080/049/039/255', '190/133/085/255'], captions: ['Sky Blue', 'Ultra Marine Blue', 'Blue Grey', 'Bluish White', 'Lila', 'Magenta', 'Flourescent Pink', 'Traffic Red', 'Warm Red', 'Dutch Orange', 'Olympic Gold', 'Signal Yellow', 'Flourescent Green', 'Intense Green', 'Leaf Green', 'Mint Turquoise', 'Red Transparent', 'Orange Transparent', 'Yellow Transparent', 'Green Transparent', 'Violet Transparent', 'Naturel', 'Pale Gold', 'Greenish Beige', 'Olive Green', 'Standard Black', 'Standard White', 'Shining Silver', 'Chocolate Brown', 'Light Brown'] }
-]
+function getParameterDefinitions() {
+  return [
+    { name: 'rendering', type: 'group', caption: 'Render' },
+    { name: 'showscreen', type: 'checkbox', checked: true, caption: 'Touch Screen?' },
+    { name: 'showhome', type: 'checkbox', checked: true, caption: 'Home Buttom?' },
+    { name: 'showfrontcam', type: 'checkbox', checked: true, caption: 'Front Camera?' },
+    { name: 'showfrontsen', type: 'checkbox', checked: true, caption: 'Front Sensor?' },
+    { name: 'showfrontspk', type: 'checkbox', checked: true, caption: 'Front Speaker?' },
+    { name: 'showringsilent', type: 'checkbox', checked: true, caption: 'Ring/Silent Switch?' },
+    { name: 'showvolume', type: 'checkbox', checked: true, caption: 'Volume Switches?' },
+    { name: 'showpower', type: 'checkbox', checked: true, caption: 'Power Switch?' },
+    { name: 'showsim', type: 'checkbox', checked: true, caption: 'Sim Slot?' },
+    { name: 'showheadphone', type: 'checkbox', checked: true, caption: 'Headphone?' },
+    { name: 'showlight', type: 'checkbox', checked: true, caption: 'Power Port?' },
+    { name: 'showmic', type: 'checkbox', checked: true, caption: 'Bottom Microphones?' },
+    { name: 'showspeaker', type: 'checkbox', checked: true, caption: 'Bottom Speaker?' },
+    { name: 'showcamera', type: 'checkbox', checked: true, caption: 'Back Camera?' },
+    { name: 'showflash', type: 'checkbox', checked: true, caption: 'Back Flash?' },
+    { name: 'others', type: 'group', caption: 'Others' },
+    { name: 'resolution', type: 'int', initial: 36, caption: 'Resolution?' },
+    { name: 'color', type: 'choice', caption: 'Color?', initial: '184/185/189/255', values: ['016/169/240/255', '019/040/177/255', '165/190/215/255', '242/243/242/255', '190/170/235/255', '243/110/202/255', '252/088/166/255', '248/060/033/255', '253/102/054/255', '255/180/050/255', '240/202/029/255', '252/230/037/255', '190/212/003/255', '166/246/029/255', '035/141/053/255', '032/163/145/255', '245/030/015/230', '255/160/000/220', '250/210/000/220', '060/145/040/230', '195/000/070/230', '236/228/212/255', '215/200/164/255', '183/180/140/255', '132/134/096/255', '042/041/038/255', '255/255/255/250', '184/185/189/255', '080/049/039/255', '190/133/085/255'], captions: ['Sky Blue', 'Ultra Marine Blue', 'Blue Grey', 'Bluish White', 'Lila', 'Magenta', 'Flourescent Pink', 'Traffic Red', 'Warm Red', 'Dutch Orange', 'Olympic Gold', 'Signal Yellow', 'Flourescent Green', 'Intense Green', 'Leaf Green', 'Mint Turquoise', 'Red Transparent', 'Orange Transparent', 'Yellow Transparent', 'Green Transparent', 'Violet Transparent', 'Naturel', 'Pale Gold', 'Greenish Beige', 'Olive Green', 'Standard Black', 'Standard White', 'Shining Silver', 'Chocolate Brown', 'Light Brown'] }
+  ]
+}
 
 const toPolygon = (cag) => {
   const points = cag.getOutlinePaths()[0].points

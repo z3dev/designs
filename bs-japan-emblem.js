@@ -1103,8 +1103,10 @@ const getEmblem = (p) => {
   return base
 }
 
-const getParameterDefinitions = () => [
-  { name: 'type', type: 'choice', initial: '1', caption: 'Type?', values: ['0', '1', '2'], captions: ['Base Only', 'Full Emblem', 'Simple Emblem'] }
-]
+function getParameterDefinitions() {
+  return [
+    { name: 'type', type: 'choice', initial: '1', caption: 'Type?', values: ['0', '1', '2'], captions: ['Base Only', 'Full Emblem', 'Simple Emblem'] }
+  ]
+}
 
 const main = (p) => getEmblem(p)

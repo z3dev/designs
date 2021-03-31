@@ -1,23 +1,25 @@
-const getParameterDefinitions = () => [
-  { name: 'case', type: 'group', caption: 'Case' },
-  { name: 'thickness', type: 'float', initial: 1.0, caption: 'Thickness (mm)?', step: 0.1, min: 1.0, max: 10.0 },
-  { name: 'offset', type: 'float', initial: 0.2, caption: 'Fit (mm)?', step: 0.1, min: 0.0, max: 12.0 },
-  { name: 'style', type: 'choice', initial: 'clip', caption: 'Style?', values: ['clip', 'exposed', 'ends', 'full'], captions: ['Clip On', 'Exposed Sides', 'Exposed Ends', 'Full Armor'] },
-  { name: 'access', type: 'group', caption: 'iPhone Access' },
-  { name: 'showscreen', type: 'checkbox', checked: false, caption: 'Touch Screen?' },
-  { name: 'showhome', type: 'checkbox', checked: false, caption: 'Home Button?' },
-  { name: 'showringsilent', type: 'checkbox', checked: true, caption: 'Ring/Silent Switch?' },
-  { name: 'showvolume', type: 'checkbox', checked: true, caption: 'Volume Switches?' },
-  { name: 'showpower', type: 'checkbox', checked: true, caption: 'Power Switch?' },
-  { name: 'showheadphone', type: 'checkbox', checked: true, caption: 'Headphone?' },
-  { name: 'showsim', type: 'checkbox', checked: false, caption: 'Sim Slot?' },
-  { name: 'showpowerjack', type: 'checkbox', checked: true, caption: 'Power Port?' },
-  { name: 'showspeaker', type: 'checkbox', checked: true, caption: 'Bottom Speakers?' },
-  { name: 'showcameraport', type: 'checkbox', checked: true, caption: 'Back Camera Port?' },
-  { name: 'others', type: 'group', caption: 'Others' },
-  { name: 'color', type: 'choice', initial: '253/102/054/255', caption: 'Color?', values: ['016/169/240/255', '019/040/177/255', '165/190/215/255', '242/243/242/255', '190/170/235/255', '243/110/202/255', '252/088/166/255', '248/060/033/255', '253/102/054/255', '255/180/050/255', '240/202/029/255', '252/230/037/255', '190/212/003/255', '166/246/029/255', '035/141/053/255', '032/163/145/255', '245/030/015/230', '255/160/000/220', '250/210/000/220', '060/145/040/230', '195/000/070/230', '236/228/212/255', '215/200/164/255', '183/180/140/255', '132/134/096/255', '042/041/038/255', '255/255/255/250', '184/185/189/255', '080/049/039/255', '190/133/085/255'], captions: ['Sky Blue', 'Ultra Marine Blue', 'Blue Grey', 'Bluish White', 'Lila', 'Magenta', 'Flourescent Pink', 'Traffic Red', 'Warm Red', 'Dutch Orange', 'Olympic Gold', 'Signal Yellow', 'Flourescent Green', 'Intense Green', 'Leaf Green', 'Mint Turquoise', 'Red Transparent', 'Orange Transparent', 'Yellow Transparent', 'Green Transparent', 'Violet Transparent', 'Naturel', 'Pale Gold', 'Greenish Beige', 'Olive Green', 'Standard Black', 'Standard White', 'Shining Silver', 'Chocolate Brown', 'Light Brown'] },
-  { name: 'resolution', type: 'int', initial: 18, caption: 'Resolution?' }
-]
+function getParameterDefinitions() {
+  return [
+    { name: 'case', type: 'group', caption: 'Case' },
+    { name: 'thickness', type: 'float', initial: 1.0, caption: 'Thickness (mm)?', step: 0.1, min: 1.0, max: 10.0 },
+    { name: 'offset', type: 'float', initial: 0.2, caption: 'Fit (mm)?', step: 0.1, min: 0.0, max: 12.0 },
+    { name: 'style', type: 'choice', initial: 'clip', caption: 'Style?', values: ['clip', 'exposed', 'ends', 'full'], captions: ['Clip On', 'Exposed Sides', 'Exposed Ends', 'Full Armor'] },
+    { name: 'access', type: 'group', caption: 'iPhone Access' },
+    { name: 'showscreen', type: 'checkbox', checked: false, caption: 'Touch Screen?' },
+    { name: 'showhome', type: 'checkbox', checked: false, caption: 'Home Button?' },
+    { name: 'showringsilent', type: 'checkbox', checked: true, caption: 'Ring/Silent Switch?' },
+    { name: 'showvolume', type: 'checkbox', checked: true, caption: 'Volume Switches?' },
+    { name: 'showpower', type: 'checkbox', checked: true, caption: 'Power Switch?' },
+    { name: 'showheadphone', type: 'checkbox', checked: true, caption: 'Headphone?' },
+    { name: 'showsim', type: 'checkbox', checked: false, caption: 'Sim Slot?' },
+    { name: 'showpowerjack', type: 'checkbox', checked: true, caption: 'Power Port?' },
+    { name: 'showspeaker', type: 'checkbox', checked: true, caption: 'Bottom Speakers?' },
+    { name: 'showcameraport', type: 'checkbox', checked: true, caption: 'Back Camera Port?' },
+    { name: 'others', type: 'group', caption: 'Others' },
+    { name: 'color', type: 'choice', initial: '253/102/054/255', caption: 'Color?', values: ['016/169/240/255', '019/040/177/255', '165/190/215/255', '242/243/242/255', '190/170/235/255', '243/110/202/255', '252/088/166/255', '248/060/033/255', '253/102/054/255', '255/180/050/255', '240/202/029/255', '252/230/037/255', '190/212/003/255', '166/246/029/255', '035/141/053/255', '032/163/145/255', '245/030/015/230', '255/160/000/220', '250/210/000/220', '060/145/040/230', '195/000/070/230', '236/228/212/255', '215/200/164/255', '183/180/140/255', '132/134/096/255', '042/041/038/255', '255/255/255/250', '184/185/189/255', '080/049/039/255', '190/133/085/255'], captions: ['Sky Blue', 'Ultra Marine Blue', 'Blue Grey', 'Bluish White', 'Lila', 'Magenta', 'Flourescent Pink', 'Traffic Red', 'Warm Red', 'Dutch Orange', 'Olympic Gold', 'Signal Yellow', 'Flourescent Green', 'Intense Green', 'Leaf Green', 'Mint Turquoise', 'Red Transparent', 'Orange Transparent', 'Yellow Transparent', 'Green Transparent', 'Violet Transparent', 'Naturel', 'Pale Gold', 'Greenish Beige', 'Olive Green', 'Standard Black', 'Standard White', 'Shining Silver', 'Chocolate Brown', 'Light Brown'] },
+    { name: 'resolution', type: 'int', initial: 18, caption: 'Resolution?' }
+  ]
+}
 
 const use = (url) => {
   const xmlhttp = new XMLHttpRequest()
